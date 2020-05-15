@@ -149,12 +149,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-/*Start Rannojit ----> */
-
-
-
-
-
 
 /* Start Shoriful ---> */
 
@@ -168,5 +162,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
 /*Start Milon ------> */
 
 
+
+
+
+
+
+/*Start Rannojit ----> */
+
+
+var containerWidth = $('.container').outerWidth();
+var containerExtraWidthCal = (windowWidth - containerWidth ) / 2;
+var containerExtraWidthCalMinusPx = containerExtraWidthCal - 20;
+
+$('.page-banner-img-cntlr').css("right", containerExtraWidthCalMinusPx);
 
 })(jQuery);
