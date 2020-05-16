@@ -79,3 +79,7 @@
 .gk-pro-grd-des > a:hover{
 	background: #FF2021;
 }
+
+.gk-pro-ctlr .footer-top-wrp {
+    margin-top: 0;
+}
