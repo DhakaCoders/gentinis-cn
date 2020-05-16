@@ -1,0 +1,115 @@
+.gk-referenties-details-sec{
+	padding: 70px 0 200px;
+	background: #F9F9F9;
+}
+.gkrds-entry-hdr{
+	text-align: center;
+	padding-bottom: 30px;
+}
+.gkrds-title{
+	display: block;
+	font-size: 24px;
+	line-height: 1;
+	font-weight: 700;
+	margin-bottom: 20px;
+	color: #191A1E;
+	text-transform: uppercase;
+}
+.gkrds-title span{
+	font-weight: normal;
+}
+.gkrds-title i{
+	color: #FF2021;
+}
+
+.gk-ref-det-ctlr ul{
+	margin-left: -12px;
+	margin-right: -12px;
+}
+.gk-ref-det-ctlr ul li{
+	float: left;
+	width: 33.3333%;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 25px;
+}
+.gk-ref-det-ctlr ul li:nth-child(3n+1){
+	clear: left;
+}
+
+
+.gk-ref-det-grd-fea-img-ctlr{
+	position: relative;
+	overflow: hidden;
+}
+.gk-ref-det-grd-fea-img{
+	height: 100%;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+}
+.gk-ref-det-grd-item:hover .gk-ref-det-grd-fea-img{
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+.gk-ref-det-grd-des{
+	padding-top: 35px;
+	text-align: center;
+}
+
+.gk-ref-det-grd-des-title{
+	display: block;
+	font-size: 24px;
+	line-height: 1;
+	font-weight: 700px;
+	margin-bottom: 20px;
+	color: #222020;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+.gk-ref-det-grd-des-title a{
+	color: #222020;
+}
+.gk-ref-det-grd-des-title a:hover{
+	color: #FF2021;
+}
+
+.gk-ref-det-grd-des > a{
+	width: 200px;
+	height: 48px;
+	padding: 5px 10px;
+	background: #222020;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+}
+.gk-ref-det-grd-des > a:hover{
+	background: #FF2021;
+}
+
+.gk-ref-det-grd-item-kijker{
+	height: 48px;
+    width: 270px;
+    background: #FF2021;
+    position: absolute;
+    left: -56px;
+    top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-45deg);
+    z-index: 11;
+}
+.gk-ref-det-grd-item-kijker span{
+	font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
