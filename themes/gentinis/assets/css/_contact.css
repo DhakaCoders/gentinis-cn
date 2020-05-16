@@ -4,12 +4,12 @@
 ----------------------
 */
 .contact-form-sec-wrp{
-	padding: 100px 0;
+	padding: 50px 0 100px;
 }
 .contact-form-lft{
-	width: 75%;
+	width: 71%;
 	float: left;
-	padding-right: 140px;
+	padding-right: 100px;
 }
 .contact-form-dsc-title{
 	display: block;
@@ -145,9 +145,10 @@
 }
 
 .contact-form-rgt{
-	width: 25%;
+	width: 29%;
 	float: right;
 	padding-top: 8px;
+	padding-left: 40px;
 }
 .contact-form-rgt-btn a{
 	display: block;
@@ -192,4 +193,102 @@
 
 #googlemap{
 	height: 845px;
+}
+
+
+/*
+--------------------
+ Responsive Css
+--------------------
+*/
+@media(max-width: 1399px){
+	.contact-info {
+	    padding: 40px 25px 15px;
+	}
+}
+@media(max-width: 1199px){
+	#googlemap{
+	  height: 745px;
+	}
+	.contact-form-rgt {
+	    padding-left: 0;
+	}
+	.contact-info {
+	    padding: 40px 20px 15px;
+	}
+	.contact-form-lft {
+	    padding-right: 50px;
+	}
+	.contact-form-dsc-title {
+	    font-size: 34px;
+	    line-height: 36px;
+	}
+
+}
+
+@media(max-width: 991px){
+	#googlemap{
+	  height: 645px;
+	}
+	.contact-form-cntlr{
+		max-width: 600px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.contact-form-lft {
+	    padding-right: 0;
+	    width: 100%;
+	    padding-bottom: 40px;
+	}
+	.contact-form-rgt {
+	    padding-left: 0;
+	    width: 100%;
+	}
+	.contact-form-dsc-title {
+	    font-size: 32px;
+	    line-height: 34px;
+	}
+}
+
+@media(max-width: 767px){
+	#googlemap{
+	  height: 545px;
+	}
+	.contact-form-rgt .ftr-col h6::after{
+		content: none;
+	}
+	.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field-textarea textarea {
+	    width: 100%;
+	    height: 160px;
+	}
+	.contact-form-sec-wrp {
+	    padding: 50px 0 70px;
+	}
+	.contact-form-dsc-title {
+	    font-size: 30px;
+	    line-height: 32px;
+	}
+}
+
+@media(max-width: 575px){
+	#googlemap{
+	  height: 445px;
+	}
+	.contact-form-wrp .wpforms-container .wpforms-form .wpforms-field-container .wpforms-field {
+	    width: 100%;
+	}
+	.contact-form-dsc-title {
+	    font-size: 28px;
+	    line-height: 30px;
+	}
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
 }
