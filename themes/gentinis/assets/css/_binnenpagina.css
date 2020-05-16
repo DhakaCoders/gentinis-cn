@@ -1,6 +1,7 @@
 .innerpage-con-wrap{
 	overflow: hidden;
 	position: relative;
+	padding-bottom: 30px;
 }
 .default-page-con {
 	padding-bottom: 0px;
@@ -223,7 +224,7 @@ ol li::before {
 }
 
 .default-page-con hr{
-	border-top: 4px solid #F5F5F5;
+	border-top: 1px solid #E9E9E9;
 	margin-bottom: 50px;
 	margin-top: 0;
 }
@@ -427,6 +428,14 @@ Gallery design
 }
 .dft-download-items{
 	margin: 0 -10px;
+	padding-bottom: 20px;
+}
+.dft-downloads-module-title{
+	text-transform: uppercase;
+	display: block;
+	font-weight: 800;
+	font-size: 28px;
+	line-height: 1;
 }
 .dft-download-item{
 	float: left;
@@ -514,6 +523,70 @@ Gallery design
 .gk-btn-transparent a{
 	background: transparent;
 }
+
+
+.dft-biggest-discounts-module{
+	background: #FF2021;
+	position: relative;
+	height: 350px;
+	margin-bottom: 65px;
+}
+.dft-biggest-discounts-module-inr{
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	color: #fff;
+}
+.dft-left-angle{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 219px;
+}
+.dft-left-angle img{
+	width: 100%;
+}
+.dft-bdm-lft{
+	width: 40%;
+	text-align: center;
+	position: relative;
+}
+.dft-bdm-rgt{
+	width: 60%;
+	text-align: right;
+	padding-right: 50px;
+	position: relative;
+}
+.dft-bdm-lft:after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	width: 1px;
+	height: 95px;
+	background: #fff;
+	right: 0;
+	z-index: 5;
+}
+.dft-bdm-rgt strong{
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 1;
+	text-transform: uppercase;
+	display: block;
+}
+.dft-bdm-lft span{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 1;
+	display: block;
+}
+
 
 @media(max-width: 1199px){
 	#main-content .default-page-con-inner{
