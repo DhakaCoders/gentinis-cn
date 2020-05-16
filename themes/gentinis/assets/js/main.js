@@ -160,7 +160,43 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 /*Start Milon ------> */
+/*
+-----------------------
+Start Contact Google Map ->> 
+-----------------------
+*/
+if( $('#googlemap').length ){
+    var latitude = $('#googlemap').data('latitude');
+    var longitude = $('#googlemap').data('longitude');
 
+    var myCenter= new google.maps.LatLng(latitude,  longitude);
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    function initialize(){
+        var mapProp = {
+          center:myCenter,
+
+          mapTypeControl:false,
+          scrollwheel: false,
+
+          zoomControl: false,
+          disableDefaultUI: true,
+          zoom:17,
+          streetViewControl: false,
+          rotateControl: false,
+          mapTypeId:google.maps.MapTypeId.ROADMAP,
+          styles : CustomMapStyles
+      };
+      var map= new google.maps.Map(document.getElementById('googlemap'),mapProp);
+
+      var marker= new google.maps.Marker({
+        position:myCenter,
+        icon:''
+        });
+      marker.setMap(map);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+}
 
 
 
