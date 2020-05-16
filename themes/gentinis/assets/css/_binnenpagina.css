@@ -425,6 +425,33 @@ Gallery design
 .dft-gallery-colums-3{
 	padding-bottom: 25px;
 }
+.dft-download-items{
+	margin: 0 -10px;
+}
+.dft-download-item{
+	float: left;
+	width: 33.3333%;
+	padding: 0 10px 20px;
+}
+.dft-download-item-inr{
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 20px 10px 20px 65px;
+	border: 1px solid #fff;
+	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
+}
+.dft-download-item-inr i{
+	position: absolute;
+	left: 25px;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.dft-download-item-inr strong{
+	font-weight: 500;
+}
 @media(max-width: 1199px){
 	#main-content .default-page-con-inner{
 		padding-right: 0;

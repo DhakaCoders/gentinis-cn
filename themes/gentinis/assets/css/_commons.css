@@ -149,6 +149,9 @@ img{
 .show-xs{
 	display: none!important;
 }
+.mt-none .footer-top-wrp{
+	margin-top: 0;
+}
 
 .divider{
 	line-height: 0;
