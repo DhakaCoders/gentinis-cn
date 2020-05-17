@@ -38,6 +38,10 @@
 
 
 .gk-prod-slider-sec{
+	
+	overflow: hidden;
+}
+.gk-prod-slider-sec-inr{
 	position: relative;
 }
 .gk-prod-mainslider .mainslider-leftarrow,
@@ -53,11 +57,11 @@
 
 .gk-prod-mainslider .mainslider-leftarrow{
 	position: absolute;
-	left: -50px;
+	left: 22%;
 	top: 50%;
-	-ms-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+	-ms-transform: translateY(-50%,-50%);
+	-webkit-transform: translateY(-50%,-50%);
+	transform: translateY(-50%,-50%);
 	z-index: 5;
 	background-image: url(../images/gk-prod-leftarrow.png);
 	background-repeat: no-repeat;
@@ -73,11 +77,11 @@
 
 .gk-prod-mainslider .mainslider-rightarrow{
 	position: absolute;
-	right: -50px;
+	right: 22%;
 	top: 50%;
-	-ms-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+	-ms-transform: translateY(-50%,-50%);
+	-webkit-transform: translateY(-50%,-50%);
+	transform: translateY(-50%,-50%);
 	z-index: 5;	
 	background-image: url(../images/gk-prod-rightarrow.png);
 	background-repeat: no-repeat;

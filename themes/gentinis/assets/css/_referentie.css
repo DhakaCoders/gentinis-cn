@@ -63,14 +63,15 @@
 	text-transform: uppercase;
 	font-weight: 700;
 }
+.gk-ref-fil-rgt-sel{
+	width: 160px;
+	display: inline-block;
+}
 .gk-ref-sec .bootstrap-select:not([class*=col-]):not([class*=form-control])
 :not(.input-group-btn) {
-    width: 150px!important;
+    width: 160px!important;
 }
-.bootstrap-select:not([class*=col-]):not([class*=form-control])
-:not(.input-group-btn) {
-    width: 150px;
-}
+
 .bootstrap-select>select {
     position: absolute!important;
     bottom: 0;
