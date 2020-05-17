@@ -322,8 +322,11 @@ Gallery design
 .dft-responsibility-grd-item-inr{
 	background: #1f2127;
 	text-align: center;
-	padding: 35px 10px 50px;
+	padding: 35px 10px 45px;
 	color: #fff;
+}
+.makes-us-different-sec-grds-cntlr .dft-responsibility-grd-item-inr{
+	padding-bottom: 35px;
 }
 .dftrgi-icon img{
 	display: inline-block;
@@ -336,10 +339,11 @@ Gallery design
 	margin-bottom: 20px;
 }
 .dftrgi-title{
-	font-size: 20px;
-	line-height: 24px;
+	font-size: 19px;
+	line-height: 1.1;
 	font-weight: 700;
 	text-transform: uppercase;
+	display: block;
 }
 .dftrgi-title span{
 	display: block;
@@ -528,7 +532,7 @@ Gallery design
 .dft-biggest-discounts-module{
 	background: #FF2021;
 	position: relative;
-	height: 350px;
+	height: 218px;
 	margin-bottom: 65px;
 }
 .dft-biggest-discounts-module-inr{
@@ -543,18 +547,18 @@ Gallery design
 	left: 0;
 	top: 0;
 	bottom: 0;
-	width: 219px;
+	width: 350px;
 }
 .dft-left-angle img{
 	width: 100%;
 }
 .dft-bdm-lft{
-	width: 40%;
+	width: 36%;
 	text-align: center;
 	position: relative;
 }
 .dft-bdm-rgt{
-	width: 60%;
+	width: 64%;
 	text-align: right;
 	padding-right: 50px;
 	position: relative;

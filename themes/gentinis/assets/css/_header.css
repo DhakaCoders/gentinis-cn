@@ -1,6 +1,6 @@
 .header{
 	position: relative;
-	z-index: 2;
+	z-index: 20;
 }
 .header-inr{
 	padding: 45px 0 55px;
