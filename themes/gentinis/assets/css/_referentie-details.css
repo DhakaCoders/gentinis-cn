@@ -1,5 +1,5 @@
 .gk-referenties-details-sec{
-	padding: 70px 0 200px;
+	padding: 75px 0 200px;
 	background: #F9F9F9;
 }
 .gkrds-entry-hdr{
@@ -11,7 +11,7 @@
 	font-size: 24px;
 	line-height: 1;
 	font-weight: 700;
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 	color: #191A1E;
 	text-transform: uppercase;
 }
@@ -53,6 +53,7 @@
 	-webkit-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 }
+
 .gk-ref-det-grd-des{
 	padding-top: 35px;
 	text-align: center;
@@ -62,7 +63,7 @@
 	display: block;
 	font-size: 24px;
 	line-height: 1;
-	font-weight: 700px;
+	font-weight: 700;
 	margin-bottom: 20px;
 	color: #222020;
 	text-transform: uppercase;
@@ -112,4 +113,27 @@
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+
+.gk-ref-det-rgtsidebar-title{
+	display: block;
+	font-size: 14px;
+	line-height: 1;
+	margin-bottom: 10px;
+	font-weight: 700;
+	color: #222020;
+	text-transform: uppercase;
+	letter-spacing: 0.01em;
+}
+.gk-ref-det-rgtsidebar-title i{
+	color: #FF2021;
+}
+
+
+.gk-ref-det-page-ctlr .gk-prod-des-sec-inr {
+    padding-bottom: 80px;
+}
+.gk-ref-det-page-ctlr .gk-prod-des-rgtsiderbar {
+    padding: 50px 30px 35px 40px;;
 }
