@@ -1,0 +1,123 @@
+.hm-testi-section{
+	padding: 160px 0 370px;
+}
+.hm-testi-slider-area{
+	max-width: 660px;
+	width: 100%;
+	float: right;
+	position: relative;
+	padding-left: 104px;
+}
+.hm-testi-slider-area i{
+	position: absolute;
+    left: 0;
+    top: 0;
+    background: #FF2021;
+    width: 104px;
+    height: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hm-testi-slider-cntlr{
+	background: #FFFFFF;
+	padding: 55px 55px 50px 55px;
+}
+.hmTestiSLideItem blockquote{
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 44px;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.hmTestiSLideItem blockquote span{
+	display: block;
+	font-size: 18px;
+	line-height: 1;
+	font-weight: 400;
+	padding-top: 25px;
+}
+
+.testi-prev-nxt{
+	position: absolute;
+	right: 55px;
+	bottom: 53px;
+}
+.testi-prev-nxt span{
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: baseline;
+	z-index: 20;
+	position: relative;
+}
+.testi-next{
+	margin-left: 27px;
+}
+
+
+.hm-service-cat-section{
+	padding: 80px 0 92px;
+}
+
+.hm-service-cat-sec-hdr{
+	text-align: center;
+	padding-bottom: 20px;
+}
+.hmscshdr-title{
+	font-size: 36px;
+	line-height: 1;
+	font-weight: 700;
+	display: block;
+	margin: 0 0 15px 0;
+	text-transform: uppercase;
+}
+.hmscshdr-title span{
+	display: block;
+	font-weight: 400;
+}
+.hm-service-cat-grd-cntlr ul{
+	margin: 0 -12px;
+}
+.hm-service-cat-grd-cntlr ul li{
+	float: left;
+	width: 25%;
+	padding: 0 12px 24px;
+}
+.hm-ser-cat-grd-item{
+	position: relative;
+	height: 420px;
+	color: #fff;
+}
+
+.hm-ser-cat-item-des-hover{
+	display: none;
+}
+.hm-ser-cat-item-des{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hm-ser-cat-item-des i,
+.hm-ser-cat-item-des strong{
+	display: block;
+}
+.hm-ser-cat-item-des i{
+	margin-bottom: 25px;
+}
+.hm-ser-cat-item-des div{
+	text-align: center;
+}
+.hm-ser-cat-item-des strong{
+	text-transform: uppercase;
+	font-size: 24px;
+	line-height: 1;
+	font-weight: 700;
+}

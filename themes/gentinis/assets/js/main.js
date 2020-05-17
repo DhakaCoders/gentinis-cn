@@ -172,6 +172,16 @@ if( $('.gk-prod-slider').length ){
 
 
 /*Start Milon ------> */
+
+// footer slide menu
+$('.ftr-col h6').on('click', function(){
+  $(this).toggleClass('active');
+  $(this).parent().siblings().find('h6').removeClass('active');
+  $(this).parent().find('ul').slideToggle(300);
+  $(this).parent().siblings().find('ul').slideUp(300);
+});
+
+
 /*
 -----------------------
 Start Contact Google Map ->> 
@@ -223,5 +233,58 @@ var containerExtraWidthCal = (windowWidth - containerWidth ) / 2;
 var containerExtraWidthCalMinusPx = containerExtraWidthCal - 20;
 
 $('.page-banner-img-cntlr').css("right", containerExtraWidthCalMinusPx);
+
+
+
+if( $('.dftResponsibilityGrdsSlider').length ){
+    $('.dftResponsibilityGrdsSlider').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+}
+if( $('.hmTestiSLider').length ){
+    $('.hmTestiSLider').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('.hm-testi-slider-cntlr .testi-prev'),
+      nextArrow: $('.hm-testi-slider-cntlr .testi-next'),
+    });
+}
+
+
 
 })(jQuery);

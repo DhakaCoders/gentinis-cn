@@ -1,6 +1,7 @@
 .innerpage-con-wrap{
 	overflow: hidden;
 	position: relative;
+	padding-bottom: 30px;
 }
 .default-page-con {
 	padding-bottom: 0px;
@@ -84,26 +85,21 @@ ul li::before {
 	-webkit-counter-increment: my-awesome-counter;
 	padding-bottom: 24px;
 	line-height: 24px;
-	padding-left: 40px;
+	padding-left: 25px;
 	position: relative;
 }
 
 .default-page-con ol li::before,
 ol li::before {
 	content: counter(my-awesome-counter) "";
-	color: #F3BA4B;
-	font-weight: 800;
-	width: 27px!important;
-	height: 27px!important;
-	border: 2px solid #F3BA4B;
+	color: #FF2021;
+	font-weight: 700;
 	font-size: 16px;
 	line-height: 1px;
 	text-align: center;
-	padding: 0 5.5px;
-	border-radius: 8px;
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 8px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -184,44 +180,51 @@ ol li::before {
 
 
 .dft-blockquote{
-	border: 8px solid #F3BA4B;
-	border-radius: 8px;
-	padding: 40px 55px 40px 48px;
+	box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.03);
+	padding: 40px 70px 45px 35px;
 	margin-bottom: 60px;
 }
-#nieuws-details-page-cntlr .dft-blockquote{
-	margin-bottom: 55px;
-}
-.dft-blockquote blockquote{
-	font-weight: 200;
-	font-size: 36px;
-	line-height: 48px;
-	margin: 0;
-	padding: 0;
-	padding-left: 135px;
-	color: #F3BA4B;
-	border: none;
+.dft-blockquote-inr{
 	position: relative;
-	font-style: italic;
+	padding-left: 140px;
 }
-.dft-blockquote blockquote i{
+.dft-blockquote i{
+	background: #FF2021;
+	width: 104px;
+	height: 104px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
 	left: 0;
 	top: 0;
 }
+.dft-blockquote blockquote{
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 44px;
+	margin: 0;
+	padding: 0;
+	color: #191A1E;
+	border: none;
+	position: relative;
+}
+.dft-blockquote i{
+	position: absolute;
+	left: 0;
+	top: 10px;
+}
 .dft-blockquote blockquote span{
 	display: block;
 	font-size: 18px;
-	line-height: 24px;
+	line-height: 34px;
 	font-style: normal;
 	padding-top: 25px;
-}
-.dft-blockquote blockquote span strong{
-	font-weight: 700;
+	font-weight: 400;
 }
 
 .default-page-con hr{
-	border-top: 4px solid #F5F5F5;
+	border-top: 1px solid #E9E9E9;
 	margin-bottom: 50px;
 	margin-top: 0;
 }
@@ -313,6 +316,276 @@ Gallery design
     -webkit-transform: translate(-50%, -50%);
 }
 /*extra*/
+.dftResponsibilityGrdsSlider{
+	margin: 0 -10px!important;
+}
+.dft-responsibility-grd-item-inr{
+	background: #1f2127;
+	text-align: center;
+	padding: 35px 10px 50px;
+	color: #fff;
+}
+.dftrgi-icon img{
+	display: inline-block;
+	vertical-align: baseline;
+}
+.dft-responsibility-grd-item{
+	padding: 0 10px;
+}
+.dftrgi-icon{
+	margin-bottom: 20px;
+}
+.dftrgi-title{
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.dftrgi-title span{
+	display: block;
+	font-weight: 400;
+}
+
+.dft-service-bx-module{
+	margin: 0 -12px;
+}
+.dft-service-bx-item{
+	float: left;
+	width: 50%;
+	padding: 0 12px 24px;
+}
+
+.dft-service-bx-item-fea-img{
+	height: 420px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+.dft-service-bx-item-fea-des{
+	text-align: center;
+}
+.dft-service-bx-item-fea-des i{
+	display: block;
+	margin-bottom: 20px;
+}
+.dft-service-bx-item-fea-des strong{
+	font-size: 24px;
+	line-height: 1;
+	font-weight: 700;
+	display: block;
+}
+
+.dft-conversation-module{
+	background: #191A1E;
+	color: #fff;
+	text-align: center;
+	padding: 45px 20px 40px; 
+	margin-bottom: 40px;
+}
+.dft-conversation-module a{
+	width: 260px;
+	height: 54px;
+	background: #FF2021;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 1;
+	text-transform: uppercase;
+}
+.dft-conversation-title{
+	font-size: 36px;
+	line-height: 1;
+	display: block;
+	margin:0 0 30px 0!important;
+	font-weight: 700;
+	padding: 0!important;
+}
+.dft-conversation-title span{
+	display: block;
+	font-weight: 400;
+}
+.dft-conversation-module a span{
+	position: relative;
+	padding-right: 40px;
+}
+.dft-conversation-module a span i{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	right: 0;
+}
+.dft-gallery-colums-3{
+	padding-bottom: 25px;
+}
+.dft-download-items{
+	margin: 0 -10px;
+	padding-bottom: 20px;
+}
+.dft-downloads-module-title{
+	text-transform: uppercase;
+	display: block;
+	font-weight: 800;
+	font-size: 28px;
+	line-height: 1;
+}
+.dft-download-item{
+	float: left;
+	width: 33.3333%;
+	padding: 0 10px 20px;
+}
+.dft-download-item-inr{
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 20px 10px 20px 65px;
+	border: 1px solid #fff;
+	box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.08);
+}
+.dft-download-item-inr i{
+	position: absolute;
+	left: 25px;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.dft-download-item-inr strong{
+	font-weight: 500;
+}
+.gk-btn{
+	max-width: 260px;
+	width: 100%;
+}
+.gk-btn a{
+	width: 100%;
+	height: 54px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	border: 2px solid #191A1E;
+	color: #222020;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 1;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.gk-btn a span{
+	position: relative;
+}
+.gk-btn-red a{
+	background: #FF2021;
+	border-color: #FF2021;
+	color: #fff;
+}
+.gk-btn{
+	margin-bottom: 30px;
+}
+.gk-btn span{
+	position: relative;
+	padding-right: 40px;
+	display: inline-block;
+	vertical-align: baseline;
+}
+.gk-btn span i{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.gk-btn{
+	text-align: center;
+}
+.gk-btn p{
+	margin: 0;
+	padding: 0;
+	color: #191A1E;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+}
+.gk-btn-black a{
+	background: #191A1E;
+	color: #fff;
+}
+.gk-btn-transparent a{
+	background: transparent;
+}
+
+
+.dft-biggest-discounts-module{
+	background: #FF2021;
+	position: relative;
+	height: 350px;
+	margin-bottom: 65px;
+}
+.dft-biggest-discounts-module-inr{
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	color: #fff;
+}
+.dft-left-angle{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 219px;
+}
+.dft-left-angle img{
+	width: 100%;
+}
+.dft-bdm-lft{
+	width: 40%;
+	text-align: center;
+	position: relative;
+}
+.dft-bdm-rgt{
+	width: 60%;
+	text-align: right;
+	padding-right: 50px;
+	position: relative;
+}
+.dft-bdm-lft:after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	width: 1px;
+	height: 95px;
+	background: #fff;
+	right: 0;
+	z-index: 5;
+}
+.dft-bdm-rgt strong{
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 1;
+	text-transform: uppercase;
+	display: block;
+}
+.dft-bdm-lft span{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 1;
+	display: block;
+}
 
 
 @media(max-width: 1199px){
@@ -333,10 +606,6 @@ Gallery design
 	}
 	.dft-renault-item{
 		padding-left: 160px;
-	}
-	.dft-blockquote blockquote {
-	    font-size: 34px;
-	    line-height: 46px;
 	}
 
 }
@@ -361,10 +630,6 @@ Gallery design
 	.fl-dft-lftimg-rgtdes-lft i svg{
 		width: 100%;
 		height: 100%;
-	}
-	.dft-blockquote{
-		padding-left: 40px;
-		padding-right: 40px;
 	}
 	
 }
@@ -400,10 +665,6 @@ Gallery design
 	.default-page-con{
 		padding-bottom: 100px;
 	}
-	.dft-blockquote {
-	    padding: 55px 50px 50px 32px;
-	    margin-bottom: 45px;
-	}
 	.fl-dft-lftimg-rgtdes.fl-dft-rgtimg-lftdes .fl-dft-lftimg-rgtdes-rgt{
 		padding-right: 0;
 	}
@@ -411,18 +672,6 @@ Gallery design
 		max-width: 400px;
 		margin-left: auto;
 		margin-right: auto;
-	}
-	.dft-blockquote blockquote{
-		padding-left: 0;
-		padding-top: 103px;
-	}
-	.dft-blockquote{
-		padding-left: 25px;
-		padding-right: 25px;
-	}
-	.dft-blockquote blockquote {
-	    font-size: 32px;
-	    line-height: 40px;
 	}
 	.dft-lnm-title{
 		font-size: 32px!important;
@@ -566,11 +815,6 @@ Gallery design
 	    width: 64px;
 	    height: 64px;
 	}
-	.dft-blockquote{
-		padding-top: 40px;
-		padding-bottom: 45px;
-	}
-	
 	.dft-lnm-title {
 	    font-size: 26px!important;
 	}
@@ -589,10 +833,7 @@ Gallery design
 
 
 @media(max-width: 479px){
-	.dft-blockquote blockquote {
-	    font-size: 30px;
-	    line-height: 38px;
-	}
+
 	
 }
 
@@ -602,24 +843,7 @@ Gallery design
 	.fl-dft-lftimg-rgtdes-lft {
 	    height: 300px;
 	}
-	.dft-blockquote blockquote {
-	    font-size: 25px;
-	    line-height: 35px;
-	}
-	.dft-blockquote blockquote span{
-		font-size: 16px;
-	}
-	.dft-blockquote blockquote i{
-		width: 70px;
-		height: 70px;
-	}
-	.dft-blockquote blockquote i svg{
-		width: 100%;
-		height: 100%;
-	}
-	.dft-blockquote blockquote {
-	    padding-top: 85px;
-	}
+
 }
 
 
