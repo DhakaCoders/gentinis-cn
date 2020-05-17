@@ -261,6 +261,17 @@ if( $('.dftResponsibilityGrdsSlider').length ){
       ]
     });
 }
+if( $('.hmTestiSLider').length ){
+    $('.hmTestiSLider').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('.hm-testi-slider-cntlr .testi-prev'),
+      nextArrow: $('.hm-testi-slider-cntlr .testi-next'),
+    });
+}
 
 
 
