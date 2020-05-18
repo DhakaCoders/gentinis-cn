@@ -316,3 +316,23 @@ form .dropdown-menu li a{
 .dropdown-menu.show{
 	width: 100%;
 }
+
+
+
+
+
+/*Slider break*/
+
+.mainSlider .main-slide-item,
+.hmTestiSLider .hmTestiSLideItem{
+	display: none;
+}
+.mainSlider .main-slide-item:first-child,
+.hmTestiSLider .hmTestiSLideItem:first-child{
+	display: block;
+}
+
+.mainSlider.slick-initialized .main-slide-item,
+.hmTestiSLider.slick-initialized .hmTestiSLideItem{
+	display: block;
+}

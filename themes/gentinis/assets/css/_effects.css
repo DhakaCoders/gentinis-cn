@@ -2,7 +2,7 @@
 All Transitions
 */
 a,input,img,textarea,button,svg,
-.img-div{
+.img-div,i,.hm-ser-cat-item-des-hover,.hm-ser-cat-item-des{
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -37,4 +37,20 @@ nav.main-nav ul li.current-menu-item a{
 
 .dft-conversation-module a:hover i svg{
 	fill: #000!important;
+}
+
+.main-slide-prev-next span:hover svg,
+.testi-prev-nxt span:hover svg{
+	fill: #FF2021!important;
+}
+
+.msbtn-1 a:hover i,
+.msbtn-2 a:hover i{
+	right: -5px;
+}
+
+
+.hm-about-sec-des a:hover{
+	background: transparent!important;
+	color: #FF2021;
 }
