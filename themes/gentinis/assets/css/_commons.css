@@ -324,15 +324,18 @@ form .dropdown-menu li a{
 /*Slider break*/
 
 .mainSlider .main-slide-item,
-.hmTestiSLider .hmTestiSLideItem{
+.hmTestiSLider .hmTestiSLideItem,
+.dftResponsibilityGrdsSlider .dft-responsibility-grd-item{
 	display: none;
 }
 .mainSlider .main-slide-item:first-child,
-.hmTestiSLider .hmTestiSLideItem:first-child{
+.hmTestiSLider .hmTestiSLideItem:first-child,
+.dftResponsibilityGrdsSlider .dft-responsibility-grd-item:first-child{
 	display: block;
 }
 
 .mainSlider.slick-initialized .main-slide-item,
-.hmTestiSLider.slick-initialized .hmTestiSLideItem{
+.hmTestiSLider.slick-initialized .hmTestiSLideItem,
+.dftResponsibilityGrdsSlider.slick-initialized .dft-responsibility-grd-item{
 	display: block;
 }

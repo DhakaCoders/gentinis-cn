@@ -2,7 +2,8 @@
 All Transitions
 */
 a,input,img,textarea,button,svg,
-.img-div,i,.hm-ser-cat-item-des-hover,.hm-ser-cat-item-des{
+.img-div,i,.hm-ser-cat-item-des-hover,.hm-ser-cat-item-des,
+.dft-download-item-inr{
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -53,4 +54,41 @@ nav.main-nav ul li.current-menu-item a{
 .hm-about-sec-des a:hover{
 	background: transparent!important;
 	color: #FF2021;
+}
+
+.gk-btn-red a:hover{
+	background: transparent;
+	color: #FF2021;
+}
+.gk-btn-red a:hover svg{
+	fill: #FF2021!important;
+}
+
+.gk-btn-black a:hover{
+	background: transparent;
+	color: #191A1E;
+}
+.gk-btn-black a:hover svg{
+	fill: #191A1E!important;
+}
+
+.gk-btn-transparent a:hover{
+	background: #191A1E;
+	color: #fff;
+}
+.gk-btn-transparent a:hover svg{
+	fill: #fff!important;
+}
+
+.gk-btn a:hover span i,
+.dft-conversation-module a:hover i{
+	right: -5px;
+}
+
+.dft-conversation-module a:hover{
+	border-color: #fff!important;
+	background: transparent;
+}
+.dft-conversation-module a:hover i svg{
+	fill: #fff!important;
 }

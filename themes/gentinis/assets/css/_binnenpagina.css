@@ -21,6 +21,7 @@
 .default-page-con h5{
 	margin-bottom: 20px;
 	line-height: 1.2;
+	text-transform: uppercase;
 }
 .default-page-con h2{
 	margin-bottom: 20px;
@@ -56,7 +57,7 @@
 }
 .default-page-con ul li,
 ul li {
-	padding: 0 0 32px 42px;
+	padding: 0 0 22px 28px;
 	position: relative;
 }
 
@@ -119,7 +120,7 @@ ol li::before {
 .dft-promo-module-title{
 	text-transform: uppercase;
 	font-weight: 700;
-	margin-bottom: 45px;
+	margin-bottom: 40px;
 	display: block;
 }
 .dftPromoModuleSlider{
@@ -221,6 +222,7 @@ ol li::before {
 	font-style: normal;
 	padding-top: 25px;
 	font-weight: 400;
+	color: #000;
 }
 
 .default-page-con hr{
@@ -319,6 +321,9 @@ Gallery design
 .dftResponsibilityGrdsSlider{
 	margin: 0 -10px!important;
 }
+.dftResponsibilityGrdsSlider .dft-responsibility-grd-item{
+	width: 33.3333%;
+}
 .dft-responsibility-grd-item-inr{
 	background: #1f2127;
 	text-align: center;
@@ -388,6 +393,13 @@ Gallery design
 	padding: 45px 20px 40px; 
 	margin-bottom: 40px;
 }
+.dft-conversation-module i{
+	display: block;
+	margin-bottom: 15px;
+}
+.dft-conversation-title{
+	line-height: 1.1;
+}
 .dft-conversation-module a{
 	width: 260px;
 	height: 54px;
@@ -402,6 +414,7 @@ Gallery design
 	font-size: 14px;
 	line-height: 1;
 	text-transform: uppercase;
+	border: 2px solid #FF2021;
 }
 .dft-conversation-title{
 	font-size: 36px;
@@ -428,11 +441,11 @@ Gallery design
 	right: 0;
 }
 .dft-gallery-colums-3{
-	padding-bottom: 25px;
+	padding-bottom: 15px;
 }
 .dft-download-items{
 	margin: 0 -10px;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
 .dft-downloads-module-title{
 	text-transform: uppercase;
@@ -440,6 +453,10 @@ Gallery design
 	font-weight: 800;
 	font-size: 28px;
 	line-height: 1;
+}
+.dft-download-item-inr:hover{
+	box-shadow: none;
+	border-color: #F3F3F3;
 }
 .dft-download-item{
 	float: left;
