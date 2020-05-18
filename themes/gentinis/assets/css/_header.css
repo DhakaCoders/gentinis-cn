@@ -190,11 +190,30 @@ nav.main-nav ul.sub-menu li:hover:after {
 
 
 @media(max-width: 1499px){
+	nav.main-nav > ul > li{
+		padding-left: 17px;
+		padding-right: 17px;
+	}
 
 }
 
 @media(max-width: 1399px){
-
+	.header-inr{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.page-banner-img-cntlr{
+		right: 15px!important;
+	}
+	.xlg-logo{
+		max-width: 400px;
+	}
+	/*nav.main-nav > ul > li{
+		padding-bottom: 30px;
+	}*/
+	.header-inr{
+		padding-bottom: 35px;
+	}
 }
 
 @media(max-width: 1299px){

@@ -104,6 +104,9 @@
 	line-height: 1;
 	color: #fff;
 }
+.page-breadcrumbs ul li a:hover{
+	color: #ff2021;
+}
 .page-breadcrumbs ul li:not(:last-child):after{
 	content: "";
 	position: absolute;
@@ -146,3 +149,110 @@
 	width: 16px;
 	height: 16px;
 }
+
+.page-back-btn-cntlr{
+	display: none;
+}
+
+@media(max-width: 1499px){
+	
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	.page-banner-title{
+		font-size: 62px;
+	}
+
+}
+
+@media(max-width: 991px){
+	.page-breadcrumbs ul li a{
+		font-size: 21px;
+	}
+	.page-breadcrumbs ul li{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.page-banner-title{
+		font-size: 52px;
+	}
+}
+
+@media(max-width: 767px){
+	.page-breadcrumbs,
+	.page-bnr-angle{
+		display: none;
+	}
+	.page-banner-title{
+		margin: 0;
+	}
+	.page-banner-img-cntlr{
+		right: 0!important;
+	}
+	.page-back-btn-cntlr{
+		display: block;
+		background: url(../images/page-back-btn-bg.png);
+		background-repeat: no-repeat;
+		width: 148px;
+		height: 158px; 
+		position: absolute;
+		bottom: -20px;
+		right: 0;
+		z-index: 20;
+		background-size: 100% 100%;
+	}
+	.page-back-btn-cntlr > div{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	.page-back-btn-cntlr a{
+		position: absolute;
+		right: 20px;
+		bottom: 13px;
+		color: #fff;
+		text-align: right;
+		display: inline-block;
+		vertical-align: baseline;
+		text-transform: uppercase;
+		font-size: 14px;
+		line-height: 1;
+		font-weight: 700;
+		padding-right: 5px;
+	}
+	.page-banner-title{
+		font-size: 42px;
+	}
+	.page-bnr-black-bg{
+		height: 200px;
+	}
+}
+
+@media(max-width: 575px){
+	.page-banner-title{
+		font-size: 38px;
+	}
+	.page-bnr-black-bg{
+		height: 152px;
+	}
+}
+
+@media(max-width: 479px){
+	.page-banner-title{
+		font-size: 30px;
+	}
+
+}
+
+@media(max-width: 359px){
+
+}
+
