@@ -120,7 +120,7 @@ ol li::before {
 .dft-promo-module-title{
 	text-transform: uppercase;
 	font-weight: 700;
-	margin-bottom: 40px;
+	margin-bottom: 37px;
 	display: block;
 }
 .dftPromoModuleSlider{
@@ -652,6 +652,18 @@ Gallery design
 		width: 100%;
 		height: 100%;
 	}
+	.dft-promo-module h1, .dft-promo-module-title{
+		margin-bottom: 30px;
+	}
+	.dftResponsibilityGrdsSlider {
+	    margin: 0 -8px!important;
+	}
+	.dft-responsibility-grd-item {
+	    padding: 0 8px;
+	}
+	.dftrgi-title{
+		font-size: 18px;
+	}
 	
 }
 @media(max-width: 850px){
@@ -780,23 +792,6 @@ Gallery design
 	.default-page-con p {
 	    margin-bottom: 20px;
 	}
-	.default-page-con ul li::before, ul li::before {
-	    width: 20px;
-	    height: 2px;
-	}
-	.default-page-con ul li, ul li {
-	    padding: 2px 0 14px 35px;
-	    line-height: 22px;
-	}
-	.table-dsc table thead tr th:first-child, 
-	.table-dsc table tbody tr td:first-child {
-	    padding-left: 20px;
-	    padding-right: 20px;
-	    width: 76px;
-	}
-	.dft-tbl-wrap{
-		margin-bottom: 45px;
-	}
 	.dft-question-mark-slider{
 		border-bottom: 2px solid #EEEEEE;
 		margin: 0 0 30px!important;
@@ -804,7 +799,16 @@ Gallery design
 	.dft-question-mark-slide-item {
 	    padding: 0;
 	}
-	.default-page-con h1, .default-page-con h2, .default-page-con h3, .default-page-con h4, .default-page-con h5 {
+	.default-page-con ul li::before, ul li::before{
+		width: 7px;
+		height: 7px;
+	}
+	.default-page-con h1, 
+	.dft-promo-module-title,
+	.default-page-con h2, 
+	.default-page-con h3, 
+	.default-page-con h4,
+	.default-page-con h5 {
 	    margin-bottom: 20px;
 	}
 
@@ -848,6 +852,10 @@ Gallery design
 	.dft-latest-news-bx-items{
 		padding-top: 20px;
 		padding-bottom: 10px;
+	}
+	.dft-plate-one-img-bx{
+		margin-left: -20px;
+		margin-right: -20px;
 	}
 
 }
