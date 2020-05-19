@@ -185,7 +185,50 @@ if( $('.gk-prod-slider').length ){
 
 
  }*/
- 
+ if( $('.gk-ref-det-ctlr ul').length ){
+    $('.gk-ref-det-ctlr ul').slick({
+      dots: false,
+      infinite: false,
+      arrows: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: true,
+            prevArrow: $('.mainslider .gk-ref-det-leftarrow'),
+            nextArrow: $('.mainslider .gk-ref-det-rightarrow'),
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+}
+
+
+ if (windowWidth <= 767) {
+  $('.mob-fltr').hide();
+  $('.gk-ref-filter-mob span').on('click', function(){
+    //$(this).toggleClass('menu-expend');
+    $('.mob-fltr').slideToggle(500);
+  });
+
+
+ }
 
 
 
