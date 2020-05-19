@@ -190,3 +190,138 @@
 .gk-ref-ctlr .footer-top-wrp {
     margin-top: 0;
 }
+
+
+
+@media(max-width: 1499px){
+	.container{
+		max-width: 1200px;
+	}
+}
+
+@media(max-width: 1399px){
+
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	.gk-ref-filter {
+	    padding: 40px 0;
+	}
+	.gk-ref-grd-ctlr {
+	    padding-bottom: 70px;
+	}
+
+}
+
+@media(max-width: 991px){
+	.gk-ref-entry-hdr {
+	    padding-bottom: 25px;
+	}
+	.gk-ref-entry-hdr p br{
+		display: none;
+	}
+	.gk-ref-grd-ctlr ul li:nth-child(3n+1) {
+	    clear: none;
+	}
+	.gk-ref-grd-ctlr ul li:nth-child(2n+1) {
+	    clear: left;
+	}
+	.gk-ref-grd-ctlr ul li {
+	    width: 50%;
+	}
+	
+}
+
+@media(max-width: 767px){
+	.gk-ref-entry-hdr {
+	    padding-bottom: 15px;
+	}
+	.gk-ref-entry-hdr p{
+		font-size: 14px;
+	}
+	.gk-ref-grd-ctlr ul {
+	    margin-left: 0;
+	    margin-right: 0;
+	}
+	.gk-ref-grd-ctlr ul li {
+	    width: 100%;
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-bottom: 40px;
+	}
+	.gk-ref-grd-item{
+		max-width: 328px;
+		margin: 0 auto;
+	}
+	.gk-ref-grd-ctlr {
+	    padding-bottom: 40px;
+	}
+	.gk-ref-filter {
+	    padding: 30px 0;
+	}
+	.gk-ref-filter-left {
+	    float: none;
+	    padding-bottom: 25px;
+	    border-bottom: 1px solid #E9E9E9;
+	}
+	.gk-ref-filter-left span {
+	    display: block;
+	    padding-left: 32px;
+	    padding-right: 20px;
+	    position: relative;
+	}
+	.gk-ref-filter-left span:before{
+		content: "";
+		height: 20px;
+		width: 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: url('../images/gk-ref-filter-icon.png');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.gk-ref-filter-left span:after{
+		content: "";
+		height: 10px;
+		width: 18px;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		background: url('../images/gk-ref-down-arrow.svg');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	.gk-ref-filter-rgt {
+	    float: none;
+	}
+	.gk-ref-fil-rgt-opt label{
+	    display: none;
+	}
+	
+	
+	
+}
+
+@media(max-width: 575px){
+	.gk-ref-grd-ctlr {
+	    padding-bottom: 20px;
+	}
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+}

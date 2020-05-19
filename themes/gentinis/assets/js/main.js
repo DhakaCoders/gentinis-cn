@@ -167,8 +167,25 @@ if( $('.gk-prod-slider').length ){
     });
 }
 
+ /*if (windowWidth <= 767) {
+  if( $('.gk-ref-det-ctlr ul').length ){
+    $('.gk-ref-det-ctlr ul').slick({
+      pauseOnHover: false,
+      dots: true,
+      infinite: true,
+      arrows: true,
+      speed: 300,
+      centerMode: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      prevArrow: $('.gk-prod-mainslider .mainslider-leftarrow'),
+      nextArrow: $('.gk-prod-mainslider .mainslider-rightarrow'),
+    });
+}
 
 
+ }*/
+ 
 
 
 
