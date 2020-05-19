@@ -39,6 +39,7 @@
 	line-height: 1;
 	font-weight: 400;
 	padding-top: 25px;
+	color: #000;
 }
 
 .testi-prev-nxt{
@@ -386,7 +387,7 @@
 	margin: 0!important; 
 }
 .main-slider-sec{
-
+	margin-top: -55px;
 }
 
 .main-slider-sec-cntlr{
@@ -398,7 +399,7 @@
 .main-slide-item-fea-img-img-cntlr{
 	position: absolute;
 	left: 0;
-	top: -55px;
+	top: 0;
 	bottom: 0;
 	right: 13%;
 	z-index: 2;
@@ -504,3 +505,231 @@
 .hm-footer-top .footer-top-wrp{
 	margin-top: -235px!important;
 }
+
+
+.xs-hm-testi-sec-fea-img{
+	display: none;
+}
+.xs-txt{
+	display: none;
+}
+@media(max-width: 1499px){
+	.hm-ser-cat-item-des-hover strong {
+	    font-size: 20px;
+	    margin-bottom: 20px;
+	}
+}
+
+@media(max-width: 1399px){
+	.main-slider-sec{
+		margin-top: 0;
+	}
+	.about-sec-angle{
+		max-width: 200px;
+	}
+	.hm-about-sec{
+		padding-top: 100px;
+	}
+}
+
+@media(max-width: 1299px){
+
+}
+
+@media(max-width: 1199px){
+	.main-slide-item-fea-img-img-cntlr{
+		right: 15px;
+	}
+	.hm-service-cat-grd-cntlr ul li{
+		width: 33.3333%;
+	}
+	.about-sec-vdo-img{
+		width: 400px;
+	}
+	.about-sec-vdo-img-cntlr{
+		border-width: 20px;
+	}
+	.about-sec-vdo-img-cntlr{
+		bottom: -20px;
+	}
+	.about-sec-vdo-img-cntlr-inr i svg{
+		max-width: 70px;
+	}
+}
+
+@media(max-width: 991px){
+	.hm-ser-cat-grd-item{
+		height: 355px;
+	}
+	.hm-ser-cat-item-des-hover strong{
+		margin-bottom: 15px;
+	}
+	.hm-service-cat-grd-cntlr ul li{
+		width: 50%;
+	}
+	.hmTestiSLideItem blockquote {
+	    font-size: 30px;
+	    line-height: 40px;
+	}
+	.hm-testi-section {
+	    padding: 100px 0 370px;
+	}
+	.hm-service-cat-section {
+	    padding: 70px 0 82px;
+	}
+	.about-sec-vdo-img-cntlr{
+		display: none;
+	}
+	.hm-about-sec{
+		min-height: auto;
+		padding-bottom: 85px;
+	}
+	.about-sec-angle {
+	    max-width: 66px;
+	}
+	.hmasd-title{
+		font-size: 32px;
+		margin-bottom: 25px;
+	}
+	.hm-about-sec {
+	    padding-top: 45px;
+	}
+	.hm-about-sec-des p {
+	    margin-bottom: 20px;
+	}
+	.about-sec-fea-img{
+		bottom: 0;
+		height: 100%;
+		left: 0;
+	}
+
+}
+
+@media(max-width: 767px){
+	.hm-ser-cat-item-des-hover{
+		padding: 15px;
+	}
+	.hm-ser-cat-item-des-inr{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.hm-testi-section{
+		background: transparent!important;
+	}
+	.xs-hm-testi-sec-fea-img img{
+		width: 100%;
+	}
+	.hm-testi-slider-area{
+		float: none;
+		padding-left: 0;
+	}
+	.hm-testi-slider-cntlr{
+		padding: 55px 0 45px;
+	}
+	.hm-testi-section{
+		padding-bottom: 0;
+	}
+	.hm-footer-top .footer-top-wrp {
+	    margin-top: 0!important;
+	}
+	.hmTestiSLider{
+		padding-bottom: 65px;
+	}
+	.testi-prev-nxt{
+		right: initial;
+		left: 0;
+	}
+	.hm-testi-slider-area i{
+		top: -93px;
+	}
+	.xs-hm-testi-sec-fea-img{
+		display: block;
+	}
+	.hm-testi-section{
+		padding-top: 0;
+	}
+	.hm-service-cat-section{
+		padding-bottom: 10px;
+	}
+	.hmscshdr-title{
+		font-size: 32px;
+	}
+	.about-sec-img-con{
+		position: static;
+		height: 400px;
+		width: 100%;
+		padding-left: 20px;
+	}
+	.hm-about-sec-des{
+		background: #fff;
+		margin-top: -50px;
+		padding-top: 25px;
+	}
+	.xlg-txt{
+		display: none;
+	}
+	.xs-txt{
+		display: block;
+	}
+}
+@media(max-width: 639px){
+	.hm-service-cat-grd-cntlr ul li{
+		width: 100%;
+		padding-bottom: 25px;
+	}
+	.hm-service-cat-grd-cntlr .hm-ser-cat-grd-item{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 400px;
+		width: 100%;
+	}
+
+}
+
+@media(max-width: 575px){
+	.hm-service-cat-grd-cntlr .hm-ser-cat-grd-item{
+		max-width: 330px;
+	}
+	.hmTestiSLideItem blockquote{
+		font-size: 28px;
+		line-height: 34px;
+	}
+	.hm-service-cat-section{
+		padding-top: 25px;
+	}
+	.hmscshdr-title{
+		font-size: 27px;
+	}
+	.about-sec-img-con{
+		height: 378px;
+	}
+	.hm-about-sec-des a{
+		height: 48px;
+		width: 180px;
+	}
+	.hmasd-title{
+		font-size: 30px;
+	}
+	.hm-about-sec {
+	    padding-top: 25px;
+	}
+}
+
+@media(max-width: 479px){
+	.hm-testi-slider-area i{
+		width: 80px;
+		height: 80px;
+	}
+	.hm-testi-slider-cntlr{
+		padding-top: 25px;
+	}
+	.hmscshdr-title{
+		font-size: 24px;
+	}
+
+}
+
+@media(max-width: 359px){
+
+}
+

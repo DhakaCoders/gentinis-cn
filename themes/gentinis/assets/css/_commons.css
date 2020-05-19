@@ -325,17 +325,20 @@ form .dropdown-menu li a{
 
 .mainSlider .main-slide-item,
 .hmTestiSLider .hmTestiSLideItem,
-.dftResponsibilityGrdsSlider .dft-responsibility-grd-item{
+.dftResponsibilityGrdsSlider .dft-responsibility-grd-item,
+.dftBlockquoteSlider .dftBlockquoteSlideItem{
 	display: none;
 }
 .mainSlider .main-slide-item:first-child,
 .hmTestiSLider .hmTestiSLideItem:first-child,
-.dftResponsibilityGrdsSlider .dft-responsibility-grd-item:first-child{
+.dftResponsibilityGrdsSlider .dft-responsibility-grd-item:first-child,
+.dftBlockquoteSlider .dftBlockquoteSlideItem:first-child{
 	display: block;
 }
 
 .mainSlider.slick-initialized .main-slide-item,
 .hmTestiSLider.slick-initialized .hmTestiSLideItem,
-.dftResponsibilityGrdsSlider.slick-initialized .dft-responsibility-grd-item{
+.dftResponsibilityGrdsSlider.slick-initialized .dft-responsibility-grd-item,
+.dftBlockquoteSlider.slick-initialized .dftBlockquoteSlideItem{
 	display: block;
 }

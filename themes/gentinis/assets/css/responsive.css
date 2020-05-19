@@ -29,6 +29,21 @@
 	.show-md{
 		display: block!important;
 	}
+	h1,.dft-promo-module-title{
+		font-size: 45px;
+	}
+	h2{
+		font-size: 32px;
+	}
+	h3{
+		font-size: 26px;
+	}
+	h4{
+		font-size: 24px;
+	}
+	h5{
+		font-size: 14px;
+	}
 	
 }
 
@@ -56,6 +71,49 @@
 		padding-right: 20px;
 		padding-left: 20px;
 	}
+	h1,.dft-promo-module-title{
+		font-size: 42px;
+	}
+	h2{
+		font-size: 32px;
+	}
+	h3{
+		font-size: 26px;
+	}
+	h4{
+		font-size: 24px;
+	}
+	h5{
+		font-size: 14px;
+	}
+	.slick-prev{
+		left: 5px;
+	}
+	.slick-next{
+		right: 5px;
+	}
+	.slick-prev,
+	.slick-next{
+		transform: initial!important;
+		bottom: 0!important;
+		top: initial!important;
+		width: 18px;
+		height: 18px;
+	}
+	.slick-prev:before,
+	.slick-next:before{
+		content: none;
+	}
+	.slick-prev{
+		background: url(../images/prev-arrow-black.svg)!important;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.slick-next{
+		background: url(../images/next-arrow-black.svg)!important;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
 }
 
 @media(max-width: 575px){
@@ -65,11 +123,47 @@
 	.show-xs{
 		display: block!important;
 	}
+	h1,.dft-promo-module-title{
+		font-size: 35px;
+	}
+	h2{
+		font-size: 30px;
+	}
+	h3{
+		font-size: 26px;
+	}
+	h4{
+		font-size: 24px;
+	}
+	h5{
+		font-size: 14px;
+	}
+	body{
+		font-size: 14px;
+		line-height: 20px;
+	}
+	p{
+		line-height: 24px;
+	}
 
 }
 
 @media(max-width: 479px){
-
+	h1,.dft-promo-module-title{
+		font-size: 30px;
+	}
+	h2{
+		font-size: 28px;
+	}
+	h3{
+		font-size: 25px;
+	}
+	h4{
+		font-size: 22px;
+	}
+	h5{
+		font-size: 14px;
+	}
 
 }
 
