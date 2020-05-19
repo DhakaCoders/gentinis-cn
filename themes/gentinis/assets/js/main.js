@@ -223,7 +223,6 @@ if( $('.gk-prod-slider').length ){
  if (windowWidth <= 767) {
   $('.mob-fltr').hide();
   $('.gk-ref-filter-mob span').on('click', function(){
-    //$(this).toggleClass('menu-expend');
     $('.mob-fltr').slideToggle(500);
   });
 
