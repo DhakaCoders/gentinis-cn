@@ -86,6 +86,34 @@
 	h5{
 		font-size: 14px;
 	}
+	.slick-prev{
+		left: 5px;
+	}
+	.slick-next{
+		right: 5px;
+	}
+	.slick-prev,
+	.slick-next{
+		transform: initial!important;
+		bottom: 0!important;
+		top: initial!important;
+		width: 18px;
+		height: 18px;
+	}
+	.slick-prev:before,
+	.slick-next:before{
+		content: none;
+	}
+	.slick-prev{
+		background: url(../images/prev-arrow-black.svg)!important;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.slick-next{
+		background: url(../images/next-arrow-black.svg)!important;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
 }
 
 @media(max-width: 575px){
@@ -109,6 +137,13 @@
 	}
 	h5{
 		font-size: 14px;
+	}
+	body{
+		font-size: 14px;
+		line-height: 20px;
+	}
+	p{
+		line-height: 24px;
 	}
 
 }

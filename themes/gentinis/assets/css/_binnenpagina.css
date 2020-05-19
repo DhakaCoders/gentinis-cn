@@ -92,7 +92,7 @@ ul li::before {
 
 .default-page-con ol li::before,
 ol li::before {
-	content: counter(my-awesome-counter) "";
+	content: counter(my-awesome-counter) ".";
 	color: #FF2021;
 	font-weight: 700;
 	font-size: 16px;
@@ -100,7 +100,7 @@ ol li::before {
 	text-align: center;
 	position: absolute;
 	left: 0;
-	top: 8px;
+	top: 9px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -401,7 +401,8 @@ Gallery design
 	line-height: 1.1;
 }
 .dft-conversation-module a{
-	width: 260px;
+	max-width: 260px;
+	width: 100%;
 	height: 54px;
 	background: #FF2021;
 	color: #fff;
@@ -664,7 +665,13 @@ Gallery design
 	.dftrgi-title{
 		font-size: 18px;
 	}
-	
+	.dft-blockquote blockquote {
+	    font-size: 30px;
+	    line-height: 38px;
+	}
+	.dft-blockquote{
+		padding: 40px 40px 45px 35px;
+	}
 }
 @media(max-width: 850px){
 
@@ -718,6 +725,27 @@ Gallery design
 	.dft-latest-news-bx-des{
 		padding-left: 30px;
 	}
+	.dft-blockquote-inr{
+		padding-left: 0;
+		padding-top: 160px;
+	}
+	.dft-blockquote{
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.dftBlockquoteSlider {
+		padding-bottom: 60px;
+	}
+	.dftBlockquoteSlider .slick-next{
+		left: 45px!important;
+		right: initial!important;
+	}
+	.dft-blockquote {
+	    padding: 40px 20px 45px 20px;
+	}
+	.dft-conversation-title{
+		font-size: 30px;
+	}
 }
 
 
@@ -726,6 +754,13 @@ Gallery design
 	.dft-pro-items-cntlr{
 		padding-bottom: 45px;
 	}
+	.dft-service-bx-module .dft-service-bx-item{
+		width: 100%;
+	}
+	.dft-conversation-title {
+	    font-size: 27px;
+	}
+	
 }
 
 
@@ -857,13 +892,39 @@ Gallery design
 		margin-left: -20px;
 		margin-right: -20px;
 	}
-
+	.dftResponsibilityGrdsSlider .dft-responsibility-grd-item-inr{
+		max-width: 330px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.dft-responsibility-grds-cntlr{
+		margin-bottom: 10px;
+	}
+	.dft-blockquote blockquote {
+	    font-size: 28px;
+	    line-height: 34px;
+	}
+	
+	.dft-blockquote{
+		margin-bottom: 35px;
+	}
+	.dft-conversation-title {
+	    font-size: 25px;
+	}
+	.dft-conversation-module i svg{
+		max-width: 55px;
+	}
 }
 
 
 @media(max-width: 479px){
-
-	
+	.fl-dft-lftimg-rgtdes-lft i {
+	    width: 60px;
+	    height: 60px;
+	}
+	.dft-conversation-title {
+	    font-size: 22px;
+	}
 }
 
 
