@@ -94,7 +94,11 @@
 .gk-ref-det-grd-des > a:hover{
 	background: #FF2021;
 }
-
+.gk-ref-det-grd-item{
+	overflow: hidden;
+	position: relative;
+	z-index: 15;
+}
 .gk-ref-det-grd-item-kijker{
 	height: 48px;
     width: 270px;
