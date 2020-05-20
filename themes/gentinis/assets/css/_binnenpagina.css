@@ -609,6 +609,16 @@ Gallery design
 	display: block;
 }
 
+@media(max-width: 1499px){
+	.dftrgi-title{
+		font-size: 17px;
+	}
+	.dftrgi-title br{
+		display: none;
+
+	}
+}
+
 
 @media(max-width: 1199px){
 	#main-content .default-page-con-inner{
@@ -629,7 +639,9 @@ Gallery design
 	.dft-renault-item{
 		padding-left: 160px;
 	}
-
+	.dftrgi-title {
+	    font-size: 16px;
+	}
 }
 
 

@@ -533,7 +533,18 @@
 }
 
 @media(max-width: 1299px){
-
+	.hm-discounts-sec-cntlr{
+		margin-right: 0;
+	}
+	.hm-discount-item-inr strong{
+		font-size: 22px;
+	}
+	.hm-discount-item-inr strong span{
+		font-size: 40px;
+	}
+	.hm-discount-item.hm-discount-item-title strong{
+		font-size: 20px;
+	}
 }
 
 @media(max-width: 1199px){
@@ -554,6 +565,15 @@
 	}
 	.about-sec-vdo-img-cntlr-inr i svg{
 		max-width: 70px;
+	}
+	.hm-discount-item.hm-discount-item-title strong {
+		font-size: 17px;
+	}
+	.hm-discount-item-inr strong{
+		font-size: 20px;
+	}
+	.hm-discount-item-inr strong span{
+		font-size: 36px;
 	}
 }
 
@@ -602,7 +622,61 @@
 		height: 100%;
 		left: 0;
 	}
-
+	.makes-us-different-sec-grds-cntlr ul{
+		margin: 0 -5px;
+	}
+	.makes-us-different-sec-grds-cntlr ul li{
+		width: 50%;
+		padding: 0 5px 10px;
+	}
+	.hm-discounts-sec-cntlr ul li{
+		width: 50%;
+	}
+	.hm-discounts-sec-cntlr ul li:first-child{
+		width: 100%;
+		padding: 0 10px 20px 10px;
+		text-align: center;
+	}
+	.hm-discounts-sec-cntlr ul li:not(:last-child):after{
+		content: none;
+	}
+	.hm-discount-item{
+		background: #DD1F20;
+	}
+	.hm-discounts-sec-cntlr ul li:first-child .hm-discount-item{
+		background: transparent;
+	}
+	.hm-discounts-left-angle{
+		display: none;
+	}
+	.hm-discount-item.hm-discount-item-title .hm-discount-item-inr{
+		display: block;
+	}
+	.hm-discount-item.hm-discount-item-title strong{
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.hm-discounts-sec-cntlr ul li{
+		padding: 0 4px 8px;
+	}
+	.hm-discount-item-inr{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.hm-discount-item{
+		padding: 15px 20px 17px;
+	}
+	.hm-discounts-sec-cntlr ul{
+		padding: 20px 10px 4px 0;
+		margin-left: -4px;
+	}
+	.makes-us-different-sec{
+		padding-top: 60px;
+	}
+	.hm-discounts-sec-cntlr{
+		margin-left: -20px;
+	}
 }
 
 @media(max-width: 767px){
@@ -671,6 +745,13 @@
 	.xs-txt{
 		display: block;
 	}
+	.makes-us-different-sec{
+		padding: 40px 0 20px;
+	}
+	.muds-hdr-title{
+		font-size: 28px;
+	}
+
 }
 @media(max-width: 639px){
 	.hm-service-cat-grd-cntlr ul li{
@@ -682,6 +763,9 @@
 		margin-right: auto;
 		max-width: 400px;
 		width: 100%;
+	}
+	.muds-hdr-title{
+		font-size: 27px;
 	}
 
 }
@@ -713,6 +797,10 @@
 	.hm-about-sec {
 	    padding-top: 25px;
 	}
+	.dftrgi-title {
+	    font-size: 17px;
+	}
+	
 }
 
 @media(max-width: 479px){
@@ -726,7 +814,12 @@
 	.hmscshdr-title{
 		font-size: 24px;
 	}
-
+	.makes-us-different-sec-grds-cntlr ul li{
+		width: 100%;
+	}
+	.muds-hdr-title{
+		font-size: 24px;
+	}
 }
 
 @media(max-width: 359px){
