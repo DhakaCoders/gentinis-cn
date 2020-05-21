@@ -509,6 +509,14 @@ nav.main-nav ul.sub-menu li:hover:after {
 	.xlg-logo{
 		top: 10px;
 		max-width: 207px;
+		display: none;
+	}
+	a.xs-logo{
+		display: block;
+		top: 10px;
+		position: relative;
+		left: 0;
+		z-index: 30;
 	}
 	.header-inr{
 		min-height: 65px;

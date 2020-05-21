@@ -371,10 +371,11 @@ if( $('.mainSlider').length ){
       dots: false,
       infinite: false,
       speed: 300,
+      fade: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $('.main-slide-prev-next .fl-prev'),
-      nextArrow: $('.main-slide-prev-next .fl-next'),
+      nextArrow: $('.main-slide-prev-next .fl-next')
     });
 }
 
