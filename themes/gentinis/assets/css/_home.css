@@ -510,7 +510,8 @@
 .xs-hm-testi-sec-fea-img{
 	display: none;
 }
-.xs-txt{
+.xs-txt,
+.main-slider-angle-xs{
 	display: none;
 }
 @media(max-width: 1499px){

@@ -175,7 +175,8 @@ ul.reset-list,
 ol.reset-list,
 ul.sub-menu,
 .fl-pagi-pagi-ctlr ul,
-.page-breadcrumbs ul{
+.page-breadcrumbs ul,
+ul.dropdown-menu{
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -183,7 +184,8 @@ ul.sub-menu,
 .reset-list li,
 ul.sub-menu li,
 .fl-pagi-pagi-ctlr ul li,
-.page-breadcrumbs ul li{
+.page-breadcrumbs ul li,
+ul.dropdown-menu li{
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -192,7 +194,8 @@ ul.sub-menu li,
 .reset-list li:before,
 ul.sub-menu li:before,
 .fl-pagi-pagi-ctlr ul li:before,
-.page-breadcrumbs ul li:before{
+.page-breadcrumbs ul li:before,
+ul.dropdown-menu li:before{
 	content: none!important;
 }
 
@@ -242,7 +245,7 @@ form .bootstrap-select .caret{
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
     text-decoration: inherit;
-    color: #1E1E1E;
+    color: #FF2021;
     font-size: 22px;
     padding-right: 0;
     position: absolute;
@@ -316,7 +319,9 @@ form .dropdown-menu li a{
 .dropdown-menu.show{
 	width: 100%;
 }
-
+.gk-ref-fil-rgt-sel .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+	width: 100%!important;
+}
 
 
 

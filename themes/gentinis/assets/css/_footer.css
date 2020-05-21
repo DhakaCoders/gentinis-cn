@@ -491,7 +491,9 @@
   }
   .footer-top-wrp {
       padding: 45px 40px;
-      margin-top: -140px;
+      margin-top: 0;
+      margin-left: -20px;
+      margin-right: -20px;
   }
   .ftr-col{
     float: none!important;

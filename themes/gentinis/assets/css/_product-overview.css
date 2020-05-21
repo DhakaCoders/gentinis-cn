@@ -108,7 +108,7 @@
 @media(max-width: 991px){
 	.gk-pro-grd-ctlr ul li {
 	    width: 50%;
-	    padding-bottom: 30px;
+	    padding-bottom: 50px;
 	}
 	.gk-pro-grd-ctlr ul li:nth-child(3n+1) {
 	    clear: none;
@@ -138,7 +138,7 @@
 	}
 	.gk-pro-grd-ctlr ul li {
 	    width: 100%;
-	    padding-bottom: 40px;
+	    padding-bottom: 50px;
 	    padding-left: 0px;
    		padding-right: 0px;
 	}

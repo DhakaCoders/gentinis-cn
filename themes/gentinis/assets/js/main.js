@@ -222,9 +222,9 @@ if( $('.gk-prod-slider').length ){
 
 
  if (windowWidth <= 767) {
-  $('.mob-fltr').hide();
+  //$('.mob-fltr').hide();
   $('.gk-ref-filter-mob span').on('click', function(){
-    $('.mob-fltr').slideToggle(500);
+    $('.gk-ref-filter-rgt').slideToggle(500);
   });
 
 

@@ -814,6 +814,9 @@ Gallery design
 		margin-left: auto;
 		margin-right: auto;
 	}
+	.innerpage-con-wrap{
+		padding-bottom: 0;
+	}
 }
 
 

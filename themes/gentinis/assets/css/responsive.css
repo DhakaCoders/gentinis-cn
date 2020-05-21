@@ -98,7 +98,8 @@
 		bottom: 0!important;
 		top: initial!important;
 		width: 18px;
-		height: 18px;
+		height: 16.5px;
+		background-repeat: no-repeat!important;
 	}
 	.slick-prev:before,
 	.slick-next:before{
