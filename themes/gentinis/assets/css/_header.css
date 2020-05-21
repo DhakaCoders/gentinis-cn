@@ -521,7 +521,9 @@ nav.main-nav ul.sub-menu li:hover:after {
 	.header-inr{
 		min-height: 65px;
 	}
-
+	.xs-popup-btm-content ul li{
+		padding-left: 0;
+	}
 
 }
 

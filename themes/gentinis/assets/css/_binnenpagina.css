@@ -994,6 +994,15 @@ Gallery design
 	.dft-download-item{
 		width: 100%;
 	}
+	.innerpage-con-wrap{
+		padding-bottom: 0;
+	}
+	.dft-downloads-module-title{
+		font-size: 22px;
+	}
+	.dft-biggest-discounts-module{
+		margin-bottom: 40px;
+	}
 }
 
 
@@ -1010,6 +1019,15 @@ Gallery design
 	}
 	.dft-bdm-lft span{
 		font-size: 20px;
+	}
+	.dft-bdm-lft span br{
+		display: none;
+	}
+	.dft-biggest-discounts-module-inr {
+	    padding: 35px 10px 35px;
+	}
+	.dft-blockquote blockquote{
+		font-size: 26px;
 	}
 }
 
