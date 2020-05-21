@@ -545,6 +545,19 @@
 	.hm-discount-item.hm-discount-item-title strong{
 		font-size: 20px;
 	}
+	.main-slider-angle{
+		display: none;
+	}
+	.main-slide-item-fea-img-img-cntlr{
+		right: 0!important;
+	}
+	.ms-title {
+	    font-size: 67px;
+	    line-height: 65px;
+	}
+	.hm-discounts-left-angle{
+		width: 302px;
+	}
 }
 
 @media(max-width: 1199px){
@@ -574,6 +587,12 @@
 	}
 	.hm-discount-item-inr strong span{
 		font-size: 36px;
+	}
+	.main-slide-des{
+		padding: 200px 0 180px;
+	}
+	.hm-discounts-left-angle{
+		width: 291px;
 	}
 }
 
@@ -676,6 +695,19 @@
 	}
 	.hm-discounts-sec-cntlr{
 		margin-left: -20px;
+	}
+	.ms-title {
+	    font-size: 56px;
+	    line-height: 58px;
+	}
+	.main-slide-des {
+	    padding: 180px 0 150px;
+	}
+	.hm-discount-item.hm-discount-item-title strong{
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		font-weight: 400;
 	}
 }
 
@@ -819,6 +851,9 @@
 	}
 	.muds-hdr-title{
 		font-size: 24px;
+	}
+	.hm-discount-item-inr strong span {
+	    font-size: 27px;
 	}
 }
 
