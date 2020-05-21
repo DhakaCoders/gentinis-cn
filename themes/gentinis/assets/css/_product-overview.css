@@ -52,6 +52,9 @@
 	color: #222020;
 	letter-spacing: 0.01em;
 	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .gk-pro-grd-des-title a{
 	color: #222020;

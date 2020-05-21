@@ -104,6 +104,11 @@
 	padding: 0  0.1%;
 }
 
+.gk-prod-slider-item-fea-img{
+	height: 544px;
+	width: 100%;
+}
+
 
 
 .gk-prod-des-sec{
@@ -150,6 +155,7 @@
 	text-transform: uppercase;
 	color: #fff;
 	background: #FF2021;
+	font-weight: 700;
 }
 .gk-prod-des-left a:hover{
 	background: #222020;
@@ -271,7 +277,9 @@
 	.gk-prod-fancy-video {
 	    height: 340px!important;
 	}
-	
+	.gk-prod-fancy-video i svg{
+		max-width: 70px;
+	}
 
 
 

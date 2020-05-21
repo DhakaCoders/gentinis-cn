@@ -186,8 +186,8 @@ if( $('.gk-prod-slider').length ){
 
 
  }*/
- if( $('.gk-ref-det-ctlr ul').length ){
-    $('.gk-ref-det-ctlr ul').slick({
+ if( $('.gkRefGrdSlider').length ){
+    $('.gkRefGrdSlider').slick({
       dots: false,
       infinite: false,
       arrows: false,
@@ -209,8 +209,8 @@ if( $('.gk-prod-slider').length ){
             slidesToScroll: 1,
             dots: true,
             arrows: true,
-            prevArrow: $('.mainslider .gk-ref-det-leftarrow'),
-            nextArrow: $('.mainslider .gk-ref-det-rightarrow'),
+            /*prevArrow: $('.mainslider .gk-ref-det-leftarrow'),
+            nextArrow: $('.mainslider .gk-ref-det-rightarrow'),*/
           }
         }
         // You can unslick at a given breakpoint now by adding:
