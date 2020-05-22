@@ -168,8 +168,11 @@ if( $('.gk-prod-slider').length ){
     });
 }
 
-var slickColodeWidth = $('.slick-cloned').width();
-alert(slickColodeWidth);
+var slickColodeWidth = $('.gk-prod-slider-item').outerWidth();
+var slickColodeWidth2 = (slickColodeWidth / 2);
+//alert(slickColodeWidth2);
+
+$('.gk-prod-mainslider .mainslider-leftarrow').css("left",slickColodeWidth2);
 
  /*if (windowWidth <= 767) {
   if( $('.gk-ref-det-ctlr ul').length ){
