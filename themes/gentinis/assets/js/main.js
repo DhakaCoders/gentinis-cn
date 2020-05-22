@@ -160,13 +160,16 @@ if( $('.gk-prod-slider').length ){
       arrows: true,
       speed: 300,
       centerMode: true,
-      centerPadding: '30%',
+      //centerPadding: '30%',
       slidesToShow: 1,
       slidesToScroll: 1,
       prevArrow: $('.gk-prod-mainslider .mainslider-leftarrow'),
       nextArrow: $('.gk-prod-mainslider .mainslider-rightarrow'),
     });
 }
+
+var slickColodeWidth = $('.slick-cloned').width();
+alert(slickColodeWidth);
 
  /*if (windowWidth <= 767) {
   if( $('.gk-ref-det-ctlr ul').length ){
