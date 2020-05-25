@@ -20,14 +20,36 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-}
-.xlg-logo{
-	display: block;
-	position: relative;
+	display: flex;
+	align-items: center;
 	z-index: 30;
 }
+
 .xs-logo{
 	display: none;
+}
+.logo-texts{
+	padding-left: 13px;
+}
+.logo-texts strong{
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 48px;
+	line-height: 1;
+	font-weight: 700;
+}
+.logo-texts strong,
+.logo-texts span{
+	text-transform: uppercase;
+}
+.logo-texts span{
+	display: block;
+	font-weight: 300;
+	font-size: 36px;
+	line-height: 1;
+}
+.has-cat-title{
+	margin-top: -22px;
 }
 
 .hdr-topbar{
@@ -73,6 +95,10 @@
 .hdr-time label{
 	margin: 0;
 	font-weight: 500;
+}
+.hdr-social{
+	position: relative;
+	top: -.5px;
 }
 .hdr-social a{
 	display: inline-block;
@@ -202,6 +228,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 	width: 0;
 	position: absolute;
 	height: 0;
+	text-indent: -9999999999999px;
 }
 
 .hdr-humbergur-btn{
@@ -250,9 +277,6 @@ nav.main-nav ul.sub-menu li:hover:after {
 	.page-banner-img-cntlr{
 		right: 15px!important;
 	}
-	.xlg-logo{
-		max-width: 400px;
-	}
 	nav.main-nav > ul > li{
 		padding-bottom: 30px;
 	}
@@ -270,9 +294,6 @@ nav.main-nav ul.sub-menu li:hover:after {
 }
 
 @media(max-width: 1199px){
-	.xlg-logo {
-	    max-width: 300px;
-	}
 	nav.main-nav > ul > li {
 	    padding-left: 10px;
 	    padding-right: 10px;
@@ -443,6 +464,7 @@ nav.main-nav ul.sub-menu li:hover:after {
 	    z-index: 9999;
 	    width: 100%;
 	    height: initial;
+	    text-indent: initial;
 	}
 	.xs-nav-inr{
 		position: relative;
@@ -508,7 +530,6 @@ nav.main-nav ul.sub-menu li:hover:after {
 @media(max-width: 575px){
 	.xlg-logo{
 		top: 10px;
-		max-width: 207px;
 		display: none;
 	}
 	a.xs-logo{

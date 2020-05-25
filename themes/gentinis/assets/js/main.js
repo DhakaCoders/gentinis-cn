@@ -80,6 +80,8 @@ if( $('.responsive-slider').length ){
     $('.responsive-slider').slick({
       dots: true,
       infinite: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
       speed: 300,
       slidesToShow: 4,
       slidesToScroll: 4,
@@ -158,6 +160,8 @@ if( $('.gk-prod-slider').length ){
       dots: false,
       infinite: true,
       arrows: true,
+      autoplay: true,
+      autoplaySpeed: 4000,
       speed: 300,
       centerMode: true,
       //centerPadding: '30%',
@@ -197,6 +201,8 @@ $('.gk-prod-mainslider .mainslider-leftarrow').css("left",slickColodeWidth2);
       dots: false,
       infinite: false,
       arrows: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
       speed: 300,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -312,6 +318,8 @@ if( $('.dftResponsibilityGrdsSlider').length ){
     $('.dftResponsibilityGrdsSlider').slick({
       dots: false,
       infinite: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
       speed: 300,
       slidesToShow: 3,
       slidesToScroll: 1,
@@ -341,6 +349,8 @@ if( $('.hmTestiSLider').length ){
     $('.hmTestiSLider').slick({
       dots: false,
       infinite: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
       speed: 300,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -354,6 +364,8 @@ if( $('.dftBlockquoteSlider').length ){
     $('.dftBlockquoteSlider').slick({
       dots: false,
       infinite: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
       speed: 300,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -376,6 +388,8 @@ if( $('.mainSlider').length ){
     $('.mainSlider').slick({
       dots: false,
       infinite: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
       speed: 300,
       fade: true,
       slidesToShow: 1,

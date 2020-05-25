@@ -480,6 +480,10 @@
 .msbtn-1 a:hover{
 	border-color: #fff!important;
 	background: transparent!important;
+	color: #fff!important;
+}
+.msbtn-1 a:hover svg{
+	fill: #fff!important;
 }
 .msbtn-2 a:hover{
 	border-color: #FF2021!important;
@@ -514,6 +518,40 @@
 .main-slider-angle-xs{
 	display: none;
 }
+
+
+.mainSlider .main-slide-item.slick-current .main-slide-des-inr .ms-title{
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;	
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+.mainSlider .main-slide-item.slick-current .main-slide-des-inr p{
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;	
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;	
+}
+.mainSlider .main-slide-item.slick-current .main-slide-des-inr .main-slide-btns{
+  -webkit-animation-name: fadeInUpShort;
+  animation-name: fadeInUpShort;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;	
+  -webkit-animation-delay: 1.6s;
+  animation-delay: 1.6s;	
+}
+
+
 @media(max-width: 1499px){
 	.hm-ser-cat-item-des-hover strong {
 	    font-size: 20px;
