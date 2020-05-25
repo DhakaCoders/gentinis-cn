@@ -48,6 +48,9 @@
 	font-size: 36px;
 	line-height: 1;
 }
+.logo-texts i{
+	color: #FF2021;
+}
 .has-cat-title{
 	margin-top: -22px;
 }
