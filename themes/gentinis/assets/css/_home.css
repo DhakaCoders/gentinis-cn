@@ -840,6 +840,7 @@
 		right: 0;
 		bottom: -35px;
 		z-index: 30;
+		display: block;
 	}
 	.main-slider-angle-xs div{
 		position: relative;
