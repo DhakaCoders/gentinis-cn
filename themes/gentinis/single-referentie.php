@@ -1,18 +1,6 @@
 <?php 
 get_header();
-$thisID = get_the_ID();
-
-$shopID = 10;
-$standaardbanner = get_field('pagebanner', $shopID);
-if( empty($standaardbanner) ) $standaardbanner = THEME_URI.'/assets/images/page-bnr.jpg';
-
-$categories = get_the_terms( $thisID, 'product_cat' );
-$term_name = '';
-if ( ! empty( $categories ) ) {
-    foreach( $categories as $category ) {
-       $term_name = $category->name; 
-    }
-}
+$thisID = get_the_ID(); 
 ?>
 <section class="page-banner">
   <div class="page-bnr-black-bg">
@@ -20,13 +8,13 @@ if ( ! empty( $categories ) ) {
       <div class="page-banner-img-cntlr">
         <div class="page-back-btn-cntlr">
           <div>
-            <a href="javascript:history.go(-1)"><i><img src="<?php echo THEME_URI; ?>/assets/images/back-btn-arrow.png"></i> Terug</a>
+            <a href="#"><i><img src="<?php echo THEME_URI; ?>/assets/images/back-btn-arrow.png"></i> Terug</a>
           </div>
         </div>
         <div class="page-banner-img-cntlr-inr">
           <span class="page-banner-overlay-bg"></span>
           <div class="page-banner-bg-cntlr">
-            <div class="page-banner-bg inline-bg" style="background-image:url(<?php echo $standaardbanner; ?>);">
+            <div class="page-banner-bg inline-bg" style="background-image:url(<?php echo THEME_URI; ?>/assets/images/page-bnr.jpg);">
             </div>
           </div>
           <span class="page-bnr-angle"><img src="<?php echo THEME_URI; ?>/assets/images/page-bnr-angle.png"></span>
@@ -35,9 +23,13 @@ if ( ! empty( $categories ) ) {
       <div class="page-banner-des">
         <div class="page-banner-des-inr">
           <div>
-            <?php if( !empty($term_name) ) printf('<h1 class="page-banner-title"><span>%s<i>.</i></span></h1>', $term_name); ?>
+            <h1 class="page-banner-title"><span>Referenties<i>.</i></span></h1>
             <div class="page-breadcrumbs">
-              <?php cbv_breadcrumbs(); ?>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Binnenpagina</a></li>
+                <li><a href="#">Binnenpagina</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -65,6 +57,7 @@ if ( ! empty( $categories ) ) {
     </div>
   </div>
 </section>
+
 <?php 
 $desc = get_field('descriptionsec', $thisID); 
 $galleries = get_field('galerij', $thisID); 
@@ -88,33 +81,39 @@ if( $galleries ):
   </div>
 </section>
 <?php endif; ?>
-<section class="gk-prod-des-sec">
-  <div class="container-sm">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="gk-prod-des-sec-inr clearfix">
-          <div class="gk-prod-des-left">
-          <?php 
-          if( $desc ): 
-            if( !empty($desc['titel']) ) printf('<h3 class="gk-prod-des-left-title">%s<i>.</i></h3>', $desc['titel'] );
-            if(!empty($desc['beschrijving'])) echo wpautop( $desc['beschrijving'] ); 
 
-            $knop = $desc['knop'];
-            if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
-                printf('<a href="%s" target="%s">%s</a>', $knop['url'], $knop['target'], $knop['title']); 
-            }
-          endif;
-          ?>
-          </div>
-          <div class="gk-prod-des-rgtsiderbar">
-            <h4 class="gk-prod-rgtsidebar-title">Catalogus<i>.</i></h4>
-            <p>Donec faucibus libero eu dictum facilisis.</p>
-            <span>Modern Strak 2019<i><img src="<?php echo THEME_URI; ?>/assets/images/gk-prod-category.svg"></i></span>
-            <span>Modern Strak 2020<i><img src="<?php echo THEME_URI; ?>/assets/images/gk-prod-category.svg"></i></span>
+<div class="gk-ref-det-page-ctlr">
+  <section class="gk-prod-des-sec">
+    <div class="container-sm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="gk-prod-des-sec-inr clearfix">
+            <div class="gk-prod-des-left">
+              <?php 
+                if( $desc ): 
+                  if( !empty($desc['titel']) ) printf('<h3 class="gk-prod-des-left-title">%s<i>.</i></h3>', $desc['titel'] );
+                  if(!empty($desc['beschrijving'])) echo wpautop( $desc['beschrijving'] ); 
+
+                  $knop = $desc['knop'];
+                  if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                      printf('<a href="%s" target="%s">%s</a>', $knop['url'], $knop['target'], $knop['title']); 
+                  }
+                endif;
+              ?>
+            </div>
+            <div class="gk-prod-des-rgtsiderbar">
+              <h5 class="gk-ref-det-rgtsidebar-title">Specificaties<i>.</i></h5>
+              <p>Donec faucibus libero eu dictum facilisis.</p>
+              <h5 class="gk-ref-det-rgtsidebar-title">Materialen<i>.</i></h5>
+              <p>Donec faucibus libero eu dictum facilisis.</p>
+              <h5 class="gk-ref-det-rgtsidebar-title">Concept<i>.</i></h5>
+              <p>Donec faucibus libero eu dictum facilisis.</p>
+              <h5 class="gk-ref-det-rgtsidebar-title">Lorem ipsum<i>.</i></h5>
+              <p>Donec faucibus libero eu dictum facilisis.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <?php 
       $videosec = get_field('videosec', $thisID); 
       if( $videosec ):
@@ -143,17 +142,35 @@ if( $galleries ):
       </div>
     </div>
     <?php endif; ?>
-  </div>
-</section>
+    </div>
+  </section>
+</div>
 
 
 <?php 
+$categories = get_the_terms( $thisID, 'referenties_cat' );
+$term_id = $term_name = $term_desc = '';
+if ( ! empty( $categories ) ) {
+    foreach( $categories as $category ) {
+       $term_id = $category->term_id;
+       $term_name = $category->name;
+       $term_desc = $category->description;
+    }
+}
+
 $query = new WP_Query(array( 
     'post_type'=> 'referentie',
     'post_status' => 'publish',
-    'posts_per_page' => 6,
+    'posts_per_page' => -1,
     'orderby' => 'date',
-    'order'=> 'ASC'
+    'order'=> 'ASC',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'referenties_cat',
+        'field' => 'term_id',
+        'terms' => $term_id
+      )
+    )
 
   ) 
 );
@@ -165,8 +182,8 @@ if($query->have_posts()):
       <div class="col-md-12">
         <div class="gk-referenties-details-sec-inr">
           <div class="gkrds-entry-hdr">
-            <h4 class="gkrds-title"><span>Keukens</span>Referenties<i>.</i></h4>
-            <p>Etiam facilisis leo sed blandit tristique. Nam nec ultricies diam, ac dictum elit. Ut venenatis imperdiet dolor, id <br> iaculis magna placerat at. Mauris quis mi augue.</p>
+            <h4 class="gkrds-title"><?php if( !empty($term_name) ) printf('<span>%s</span>', $term_name); ?>Referenties<i>.</i></h4>
+            <?php if( !empty($term_desc) ) echo wpautop( $term_desc ); ?>
           </div>
         </div>
       </div>

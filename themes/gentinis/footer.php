@@ -1,4 +1,26 @@
+<?php 
+  $spacialArry = array(".", "/", "+", " ");$replaceArray = '';
+  $contact = get_field('contactinfo', 'options');
+  $gmapsurl = $contact['google_maps'];
 
+  $address = $contact['address'];
+  $emailadres = $contact['emailaddress'];
+  $show_telefoon_1 = $contact['telephone_1'];
+  $telefoon_1 = trim(str_replace($spacialArry, $replaceArray, $show_telefoon_1));
+
+  $show_telefoon_2 = $contact['telephone_2'];
+  $telefoon_2 = trim(str_replace($spacialArry, $replaceArray, $show_telefoon_2));
+  $gmaplink = !empty($gmapsurl)?$gmapsurl: 'javascript:void()';
+
+  $lfooter = get_field('lfooter', 'options');
+  $logoObj = $lfooter['ftlogo'];
+  if( is_array($logoObj) ){
+    $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+  }else{
+    $logo_tag = '';
+  }
+  $copyright_text = get_field('copyright_text', 'options');
+?>
 <footer class="footer-wrp">
   <div class="ftr-top">
     <div class="container">
@@ -7,20 +29,23 @@
           <div class="ftr-col-main clearfix">
             <div class="ftr-col ftr-col-1">
               <div class="ftr-logo">
-                <a href="#"><img src="<?php echo THEME_URI; ?>/assets/images/ftr-logo.svg" alt=""></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                </a>
                 <strong>Gentinis<span>.</span></strong>
               </div>
             </div>
             <div class="ftr-col ftr-col-2 hide-md"> 
-              <h6><span>Navigatie<b>.</b></span></h6>
-              <ul class="ulc">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Keukens</a></li>
-                <li><a href="#">Meubelen</a></li>
-                <li><a href="#">Interieur</a></li>
-                <li><a href="#">Realisaties</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
+              <h6><span><?php _e( 'Navigatie', THEME_NAME );?><b>.</b></span></h6>
+              <?php 
+                $fmenuOptionsa = array( 
+                    'theme_location' => 'cbv_fta_menu', 
+                    'menu_class' => 'ulc',
+                    'container' => '',
+                    'container_class' => ''
+                  );
+                wp_nav_menu( $fmenuOptionsa ); 
+              ?>
             </div>
             <div class="ftr-col ftr-col-3">
               <h6><span>OPENINGSUREN<b>.</b></span></h6>
@@ -41,14 +66,14 @@
             <div class="ftr-col ftr-col-4">
               <h6><span>Contact<b>.</b></span></h6>
               <ul class="ulc">
-                <li><a href="mailto:info@gentinis.be">info@gentinis.be</a></li>
-                <li><a href="#">Nijverheidszone Begijnenmeers 3, <br> 1770 Liedekerke</a></li>
+                <?php if( !empty($emailadres) ) printf('<li><a href="mailto:%s">%s</a></li>', $emailadres, $emailadres); ?>
+                <?php if( !empty($address) ) printf('<li><a href="%s">%s</a></li>', $gmaplink, $address); ?>
                 <li><span>BE0478242464</span></li>
               </ul>               
             </div>
             <div class="ftr-col ftr-col-5">
-              <a href="#">0475 / 78.16.05</a>              
-              <a href="#">0496 / 51.45.70</a>              
+            <?php if( !empty($show_telefoon_1) ) printf('<a href="tel:%s">%s</a>', $telefoon_1, $show_telefoon_1); ?>
+            <?php if( !empty($show_telefoon_2) ) printf('<a href="tel:%s">%s</a>', $telefoon_2, $show_telefoon_2); ?>                         
             </div>
           </div>
         </div>
@@ -61,14 +86,18 @@
         <div class="col-12">
           <div class="ftr-btm-innr clearfix">
             <div class="ftr-btm-col-1">
-              <span>&copy; 2020 Gentinis Keukens. All Rights Reserved.</span>
+              <?php if( !empty( $copyright_text ) ) printf( '<span>%s</span>', $copyright_text); ?> 
             </div>
             <div class="ftr-btm-col-2">
-              <ul class="ulc clearfix">
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-              </ul>
+              <?php 
+                $ftmenuOptions = array( 
+                    'theme_location' => 'cbv_copyright_menu', 
+                    'menu_class' => 'ulc clearfix',
+                    'container' => '',
+                    'container_class' => ''
+                  );
+                wp_nav_menu( $ftmenuOptions ); 
+              ?>
             </div>
             <div class="ftr-btm-col-3 text-right">
               <a href="#">webdesign by conversal</a>

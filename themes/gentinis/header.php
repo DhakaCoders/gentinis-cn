@@ -132,6 +132,21 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php
+$spacialArry = array(".", "/", "+", " ");$replaceArray = ''; 
+$contact = get_field('contactinfo', 'options');
+$show_telefoon = $contact['telephone_1'];
+$telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
+
+$logoObj = get_field('logo_header', 'options');
+if( is_array($logoObj) ){
+  $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+}else{
+  $logo_tag = '';
+}
+$smedias = get_field('sociale_media', 'options');
+$cterm = get_queried_object();
+?>
 <div class="bdoverlay"></div>  
 <header class="header">
   <div class="container">
@@ -140,11 +155,28 @@
           <div class="header-inr clearfix">
             <div class="hdr-lft">
               <div class="logo">
-                <a class="xlg-logo" href="#">
-                  <img src="<?php echo THEME_URI; ?>/assets/images/logo.svg">
+                <a class="xlg-logo" href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
                 </a>
                 <div class="logo-texts">
                   <strong>Gentinis<i>.</i></strong>
+                  <?php if( isset($cterm) && ! empty($cterm) && ! is_wp_error( $cterm ) && !is_singular()): ?>
+                  <?php if( !empty($cterm->name) ) printf('<span>%s<i>.</i></span>', $cterm->name); ?>
+                  <?php 
+                    else: 
+                      if( is_singular('product') ):
+                        $thisID = get_the_ID();
+                        $categories = get_the_terms( $thisID, 'product_cat' );
+                        $term_name = '';
+                        if ( ! empty( $categories ) ) {
+                            foreach( $categories as $category ) {
+                              $term_name = $category->name; 
+                            }
+                        }
+
+                        if( !empty($term_name) ) printf('<span>%s<i>.</i></span>', $term_name);
+                      endif;
+                    endif; ?>
                 </div>
               </div>
             </div>
@@ -152,36 +184,33 @@
               <div class="hdr-topbar text-right">
                 <div class="hdr-topbar-inr">
                   <ul class="reset-list">
+                    <?php if( !empty($telefoon) ): ?>
                     <li>
                       <div class="hdr-tel">
-                        <a href="#">0475/78.16.05</a>
+                        <a href="tel:<?php echo $telefoon; ?>"><?php echo $show_telefoon; ?></a>
                       </div>
                     </li>
+                    <?php endif; ?>
                     <li>
                       <div class="hdr-time">
-                        <label>Di - Za:</label>
                         <div>
-                          <span>10:00 - 12:00   /   14:00 - 18:00</span>
+                          <label>Di - Za:</label>
+                          <div>
+                            <span>10:00 - 12:00   /   14:00 - 18:00</span>
+                          </div>
                         </div>
+                        <p>Ook mogelijk op afspraak </p>
                       </div>
                     </li>
                     <li>
                       <div class="hdr-social">
-                        <a href="#">
-                          <i>
-                            <svg class="facebook-icon-svg" width="10" height="18" viewBox="0 0 10 18" fill="#9A9A9A">
-                              <use xlink:href="#facebook-icon-svg"></use>
-                            </svg> 
-                          </i>
-                        </a>
-                        <a href="#">
-                          <i>
-                            <svg class="instagram-icon-svg" width="19" height="18" viewBox="0 0 19 18" fill="#9A9A9A">
-                              <use xlink:href="#instagram-icon-svg"></use>
-                            </svg> 
-                          </i>
-                        </a>
-                        
+                      <?php if(!empty($smedias)):  ?>
+                        <?php foreach($smedias as $smedia): ?>
+                          <a target="_blank" href="<?php echo $smedia['url']; ?>">
+                            <?php echo $smedia['icon']; ?>
+                          </a>
+                       <?php endforeach; ?>
+                      <?php endif; ?> 
                       </div>
                     </li>
                   </ul>
@@ -199,22 +228,15 @@
                 </div>
                 <div class="main-nav-cntlr-inr">                                               
                   <nav class="main-nav clearfix">
-                    <ul class="clearfix reset-list">
-                      <li class="current-menu-item"><a href="#">Home</a></li>
-                      <li class="menu-item-has-children">
-                        <a href="#">Keukens</a>
-                        <ul class="sub-menu">
-                          <li><a href="#">Sub menu item 1</a></li>
-                          <li><a href="#">Sub menu item 2</a></li>
-                          <li><a href="#">Sub menu item 3</a></li>
-                          <li><a href="#">Sub menu item 4</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="#">Meubelen</a></li>
-                      <li><a href="#">Interieur</a></li>
-                      <li><a href="#">Realisaties</a></li>
-                      <li><a href="#">Contact</a></li>
-                    </ul>
+                    <?php 
+                      $mainnavOptions = array( 
+                          'theme_location' => 'cbv_main_menu', 
+                          'menu_class' => 'clearfix reset-list',
+                          'container' => '',
+                          'container_class' => ''
+                        );
+                      wp_nav_menu( $mainnavOptions );
+                    ?>
                   </nav>
                 </div>
                 <div class="xs-nav-cntlr">
@@ -226,56 +248,47 @@
                       </div>
                     </div>
                     <div class="xs-main-nav">
-                      <ul class="clearfix reset-list">
-                        <li class="current-menu-item"><a href="#">Home</a></li>
-                        <li class="menu-item-has-children">
-                          <a href="#">Keukens</a>
-                          <ul class="sub-menu">
-                            <li><a href="#">Sub menu item 1</a></li>
-                            <li><a href="#">Sub menu item 2</a></li>
-                            <li><a href="#">Sub menu item 3</a></li>
-                            <li><a href="#">Sub menu item 4</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="#">Meubelen</a></li>
-                        <li><a href="#">Interieur</a></li>
-                        <li><a href="#">Realisaties</a></li>
-                        <li><a href="#">Contact</a></li>
-                      </ul>
+                      <?php 
+                      $mainnavOptions = array( 
+                          'theme_location' => 'cbv_main_menu', 
+                          'menu_class' => 'clearfix reset-list',
+                          'container' => '',
+                          'container_class' => ''
+                        );
+                      wp_nav_menu( $mainnavOptions );
+                    ?>
                     </div>
                     <div class="xs-popup-btm-content">
                       <div class="hdr-topbar text-right">
                         <div class="hdr-topbar-inr">
                           <ul class="reset-list">
+                            <?php if( !empty($telefoon) ): ?>
                             <li>
                               <div class="hdr-tel">
-                                <a href="#">0475/78.16.05</a>
+                                <a href="tel:<?php echo $telefoon; ?>"><?php echo $show_telefoon; ?></a>
                               </div>
                             </li>
+                            <?php endif; ?>
                             <li>
                               <div class="hdr-time">
-                                <label>Di - Za:</label>
                                 <div>
-                                  <span>10:00 - 12:00   /   14:00 - 18:00</span>
+                                  <label>Di - Za:</label>
+                                  <div>
+                                    <span>10:00 - 12:00   /   14:00 - 18:00</span>
+                                  </div>
                                 </div>
+                                <p>Ook mogelijk op afspraak </p>
                               </div>
                             </li>
                             <li>
                               <div class="hdr-social">
-                                <a href="#">
-                                  <i>
-                                    <svg class="facebook-icon-svg" width="10" height="18" viewBox="0 0 10 18" fill="#9A9A9A">
-                                      <use xlink:href="#facebook-icon-svg"></use>
-                                    </svg> 
-                                  </i>
-                                </a>
-                                <a href="#">
-                                  <i>
-                                    <svg class="instagram-icon-svg" width="19" height="18" viewBox="0 0 19 18" fill="#9A9A9A">
-                                      <use xlink:href="#instagram-icon-svg"></use>
-                                    </svg> 
-                                  </i>
-                                </a>
+                                <?php if(!empty($smedias)):  ?>
+                                  <?php foreach($smedias as $smedia): ?>
+                                    <a target="_blank" href="<?php echo $smedia['url']; ?>">
+                                      <?php echo $smedia['icon']; ?>
+                                    </a>
+                                 <?php endforeach; ?>
+                                <?php endif; ?> 
                                 
                               </div>
                             </li>

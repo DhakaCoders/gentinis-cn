@@ -6,14 +6,8 @@ if( $showhide_cta ):
     $cta_titel = $ctasec['titel'];
     $cta_subtitel = $ctasec['subtitel'];
     $cta_knop = $ctasec['knop'];
-
-    if( is_front_page() ){
-      $addClass = ' hm-footer-top';
-    }else{
-      $addClass = '';
-    }
 ?>
-<section class="footer-top-sec-wrp<?php echo $addClass; ?>">
+<section class="footer-top-sec-wrp mt-none">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">

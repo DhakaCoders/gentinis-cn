@@ -28,6 +28,7 @@ if( !function_exists('cbv_theme_setup') ){
         add_image_size( 'productgrid', 374, 360, true );
         add_image_size( 'gallerygird', 688, 544, true );
         add_image_size( 'videogrid', 996, 400, true );
+        add_image_size( 'gallerygrid', 442, 400, true );
 
 		
 		// add size to media uploader
@@ -43,8 +44,9 @@ if( !function_exists('cbv_theme_setup') ){
 		) );
 
 		register_nav_menus( array(
-          'cbv_main_menu' => __( 'Header Menu', THEME_NAME ),
-          'cbv_ft_menu' => __( 'Footer Menu', THEME_NAME ),
+          'cbv_main_menu' => __( 'Hoofdmenu', THEME_NAME ),
+          'cbv_fta_menu' => __( 'Footer Menu', THEME_NAME ),
+          'cbv_copyright_menu' => __( 'Copyright Menu', THEME_NAME ),
 		) );
 
 	}
