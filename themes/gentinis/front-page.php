@@ -318,25 +318,49 @@
             <p>Facilisis leo sed blandit tristique. Nam nec ultricies diam, ac dictum elit. Ut venenatis imperdiet dolor, id iaculis magna.</p>
           </div>
         </div>
+        <?php 
+          $terms = get_terms( array(
+            'taxonomy' => 'product_cat',
+            'hide_empty' => false,
+            'parent' => 0
+        ) );
+        ?>
+        <?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){ ?>
         <div class="col-md-12">
           <div class="hm-service-cat-grd-cntlr">
             <ul class="reset-list">
+              <?php 
+                $catimg_src = '';
+                foreach ( $terms as $term ) { 
+                $img_id = get_field('image', $term, false); 
+                if( !empty($img_id) ) $catimg_src = cbv_get_image_src( $img_id );
+              ?>
               <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-01.jpg);">
+                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo $catimg_src; ?>);">
                   <div class="hm-ser-cat-item-des">
                     <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-01.svg"></i>
-                      <strong>Keukens</strong>
+                      <?php 
+                        $icon_id = get_field('icon', $term, false); 
+                        if( !empty($icon_id) ):
+                      ?>
+                      <i class="mHc"><?php echo cbv_get_image_tag( $icon_id ); ?></i>
+                      <?php endif; ?>
+                      <?php printf('<strong>%s</strong>', $term->name); ?>
                     </div>
                   </div>
                   <div class="hm-ser-cat-item-des-hover">
                     <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
+                      <a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="overlay-link"></a>
                       <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-01.svg"></i>
-                        <strong>Keukens</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
+                        <?php 
+                          $icon_id = get_field('icon', $term, false); 
+                          if( !empty($icon_id) ):
+                        ?>
+                          <i><?php echo cbv_get_image_tag( $icon_id ); ?></i>
+                        <?php endif; ?>
+                        <?php printf('<strong>%s</strong>', $term->name); ?>
+                        <?php if( !empty($term->description) ) echo wpautop($term->description); ?>
+                        <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">
                           <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
                             <use xlink:href="#next-arrow-black-svg"></use>
                           </svg> 
@@ -346,184 +370,11 @@
                   </div>
                 </div>
               </li>
-              <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-02.jpg);">
-                  <div class="hm-ser-cat-item-des">
-                    <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-02.svg"></i>
-                      <strong>Interieur</strong>
-                    </div>
-                  </div>
-                  <div class="hm-ser-cat-item-des-hover">
-                    <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
-                      <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-02.svg"></i>
-                        <strong>Interieur</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
-                          <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
-                            <use xlink:href="#next-arrow-black-svg"></use>
-                          </svg> 
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-03.jpg);">
-                  <div class="hm-ser-cat-item-des">
-                    <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-03.svg"></i>
-                      <strong>winkelinrichting</strong>
-                    </div>
-                  </div>
-                  <div class="hm-ser-cat-item-des-hover">
-                    <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
-                      <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-03.svg"></i>
-                        <strong>winkelinrichting</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
-                          <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
-                            <use xlink:href="#next-arrow-black-svg"></use>
-                          </svg> 
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-04.jpg);">
-                  <div class="hm-ser-cat-item-des">
-                    <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-04.svg"></i>
-                      <strong>Meubelen</strong>
-                    </div>
-                  </div>
-                  <div class="hm-ser-cat-item-des-hover">
-                    <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
-                      <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-04.svg"></i>
-                        <strong>Meubelen</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
-                          <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
-                            <use xlink:href="#next-arrow-black-svg"></use>
-                          </svg> 
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-05.jpg);">
-                  <div class="hm-ser-cat-item-des">
-                    <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-05.svg"></i>
-                      <strong>Zetels</strong>
-                    </div>
-                  </div>
-                  <div class="hm-ser-cat-item-des-hover">
-                    <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
-                      <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-05.svg"></i>
-                        <strong>Zetels</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
-                          <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
-                            <use xlink:href="#next-arrow-black-svg"></use>
-                          </svg> 
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-06.jpg);">
-                  <div class="hm-ser-cat-item-des">
-                    <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-06.svg"></i>
-                      <strong>dressings</strong>
-                    </div>
-                  </div>
-                  <div class="hm-ser-cat-item-des-hover">
-                    <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
-                      <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-06.svg"></i>
-                        <strong>dressings</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
-                          <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
-                            <use xlink:href="#next-arrow-black-svg"></use>
-                          </svg> 
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-07.jpg);">
-                  <div class="hm-ser-cat-item-des">
-                    <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-07.svg"></i>
-                      <strong>bedden</strong>
-                    </div>
-                  </div>
-                  <div class="hm-ser-cat-item-des-hover">
-                    <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
-                      <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-07.svg"></i>
-                        <strong>bedden</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
-                          <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
-                            <use xlink:href="#next-arrow-black-svg"></use>
-                          </svg> 
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/hm-ser-cat-grd-item-08.jpg);">
-                  <div class="hm-ser-cat-item-des">
-                    <div>
-                      <i class="mHc"><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-08.svg"></i>
-                      <strong>tafels en stoelen</strong>
-                    </div>
-                  </div>
-                  <div class="hm-ser-cat-item-des-hover">
-                    <div class="hm-ser-cat-item-des-inr">
-                      <a href="#" class="overlay-link"></a>
-                      <div>
-                        <i><img src="<?php echo THEME_URI; ?>/assets/images/cat-img-08.svg"></i>
-                        <strong>tafels en stoelen</strong>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed nulla urna, mollis vitae iscipitur.</p>
-                        <a href="#">
-                          <svg class="next-arrow-black-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FF2021">
-                            <use xlink:href="#next-arrow-black-svg"></use>
-                          </svg> 
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              <?php } ?>
             </ul>
           </div>
         </div>
+        <?php } ?>
       </div>
   </div>    
 </section>
