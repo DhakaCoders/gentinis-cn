@@ -27,6 +27,7 @@ if( !function_exists('cbv_theme_setup') ){
         add_image_size( 'hmslide', 1584, 634, true );
         add_image_size( 'productgrid', 374, 360, true );
         add_image_size( 'gallerygird', 688, 544, true );
+        add_image_size( 'videogrid', 996, 400, true );
 
 		
 		// add size to media uploader

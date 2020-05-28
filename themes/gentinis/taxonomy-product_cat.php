@@ -25,11 +25,7 @@ $cterm = get_queried_object();
           <div>
             <h1 class="page-banner-title"><span>Keukens<i>.</i></span></h1>
             <div class="page-breadcrumbs">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Binnenpagina</a></li>
-                <li><a href="#">Binnenpagina</a></li>
-              </ul>
+              <?php cbv_breadcrumbs(); ?>
             </div>
           </div>
         </div>
@@ -47,7 +43,7 @@ $cterm = get_queried_object();
 if ( ! empty( $child_terms ) && ! is_wp_error( $child_terms ) ){
   get_template_part( 'templates/product', 'sub_cat' ); 
 } else {
-  get_template_part( 'templates/products', 'content' );
+  get_template_part( 'templates/cat-products', 'content' );
 } 
 ?>
 <div class="gk-pro-ctlr">

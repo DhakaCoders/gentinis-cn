@@ -11,7 +11,7 @@ function cbv_breadcrumbs() {
   $text['page']     = __('page %s', THEME_NAME); // text 'Page N'
   $text['cpage']    = __('Comment Page %s', THEME_NAME); // text 'Comment Page N'
 
-  $wrap_before    = '<ul class="reset-list">'; // the opening wrapper tag
+  $wrap_before    = '<ul>'; // the opening wrapper tag
   $wrap_after     = '</ul>'; // the closing wrapper tag
   $sep            = ''; // separator between crumbs
   $sep_before     = ''; // tag before separator
@@ -67,6 +67,12 @@ function cbv_breadcrumbs() {
         echo '<li class="item item-cat item-custom-post-type-' . $pageslug . '"><a href="' . $post_type_link . '">' . $post_type_object[0]->post_title . '</a></li>' . $sep;
 
       }
+
+      $custom_tax_name = get_queried_object()->name;
+       echo '<li class="active"><a href="javascript:void(0)">'. $custom_tax_name .'</a></li>';
+
+    } else if( is_tax('product_cat') ) {
+        echo '<li class="item item-cat item-custom-post-type-product"><a href="' . get_permalink('product') . '">product</a></li>' . $sep;
 
       $custom_tax_name = get_queried_object()->name;
        echo '<li class="active"><a href="javascript:void(0)">'. $custom_tax_name .'</a></li>';

@@ -1,12 +1,31 @@
+<?php $cterm = get_queried_object(); ?>
 <section class="product-overview-sec">
   <div class="container">
+    <?php if ( ! empty( $cterm ) && ! is_wp_error( $cterm ) ){ ?>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="product-overview-sec-inr">
+          <div class="product-overview-entry-hdr">
+            <?php if( !empty($cterm->description) ) echo wpautop($cterm->description); ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php } ?>
     <?php 
     $query = new WP_Query(array( 
         'post_type'=> 'product',
         'post_status' => 'publish',
         'posts_per_page' =>3,
         'orderby' => 'date',
-        'order'=> 'ASC'
+        'order'=> 'ASC',
+        'tax_query' => array(
+          array(
+            'taxonomy' => 'product_cat',
+            'field' => 'term_id',
+            'terms' => $cterm->term_id
+          )
+        )
       ) 
     );
 

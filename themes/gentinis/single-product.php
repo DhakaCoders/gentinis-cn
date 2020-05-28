@@ -1,0 +1,234 @@
+<?php 
+get_header();
+$thisID = get_the_ID(); 
+?>
+<section class="page-banner">
+  <div class="page-bnr-black-bg">
+    <div class="page-banner-inr">
+      <div class="page-banner-img-cntlr">
+        <div class="page-back-btn-cntlr">
+          <div>
+            <a href="#"><i><img src="<?php echo THEME_URI; ?>/assets/images/back-btn-arrow.png"></i> Terug</a>
+          </div>
+        </div>
+        <div class="page-banner-img-cntlr-inr">
+          <span class="page-banner-overlay-bg"></span>
+          <div class="page-banner-bg-cntlr">
+            <div class="page-banner-bg inline-bg" style="background-image:url(<?php echo THEME_URI; ?>/assets/images/page-bnr.jpg);">
+            </div>
+          </div>
+          <span class="page-bnr-angle"><img src="<?php echo THEME_URI; ?>/assets/images/page-bnr-angle.png"></span>
+        </div>
+      </div>
+      <div class="page-banner-des">
+        <div class="page-banner-des-inr">
+          <div>
+            <h1 class="page-banner-title"><span>Keukens<i>.</i></span></h1>
+            <div class="page-breadcrumbs">
+              <?php cbv_breadcrumbs(); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- end of page-banner -->
+
+<section class="gk-backlink-sec">
+  <div class="container-sm">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="gk-backlink-sec-inr">
+          <a href="javascript:history.go(-1)">
+          Terug
+            <i>
+              <svg class="gk-back-link-svg" width="12" height="10" viewBox="0 0 12 10" fill="#9A9A9A">
+                <use xlink:href="#gk-back-link-svg"></use>
+              </svg> 
+            </i>
+          </a>
+          <h2 class="gk-backlink-title"><?php the_title(); ?><i>.</i></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<?php 
+$desc = get_field('descriptionsec', $thisID); 
+$galleries = get_field('galerij', $thisID); 
+if( $galleries ):
+?>
+<section class="gk-prod-slider-sec">
+  <div class="gk-prod-slider-sec-inr">
+    <div class="gk-prod-mainslider">
+      <span class="mainslider-leftarrow"></span>
+      <span class="mainslider-rightarrow"></span>
+    </div>
+    <div class="gk-prod-slider">
+      <?php foreach( $galleries as $gallery ): ?>
+      <div class="gk-prod-slider-item">
+        <?php if( !empty($gallery['id']) ): ?>
+        <div class="gk-prod-slider-item-fea-img inline-bg" style="background: url(<?php echo cbv_get_image_src($gallery['id'], 'gallerygird'); ?>);"></div>
+        <?php endif; ?>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+<section class="gk-prod-des-sec">
+  <div class="container-sm">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="gk-prod-des-sec-inr clearfix">
+          <div class="gk-prod-des-left">
+          <?php 
+          if( $desc ): 
+            if( !empty($desc['titel']) ) printf('<h3 class="gk-prod-des-left-title">%s<i>.</i></h3>', $desc['titel'] );
+            if(!empty($desc['beschrijving'])) echo wpautop( $desc['beschrijving'] ); 
+
+            $knop = $desc['knop'];
+            if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                printf('<a href="%s" target="%s">%s</a>', $knop['url'], $knop['target'], $knop['title']); 
+            }
+          endif;
+          ?>
+          </div>
+          <div class="gk-prod-des-rgtsiderbar">
+            <h4 class="gk-prod-rgtsidebar-title">Catalogus<i>.</i></h4>
+            <p>Donec faucibus libero eu dictum facilisis.</p>
+            <span>Modern Strak 2019<i><img src="<?php echo THEME_URI; ?>/assets/images/gk-prod-category.svg"></i></span>
+            <span>Modern Strak 2020<i><img src="<?php echo THEME_URI; ?>/assets/images/gk-prod-category.svg"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php 
+      $videosec = get_field('videosec', $thisID); 
+      if( $videosec ):
+    ?>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="gk-prod-fancy-sec">
+          <div class="gk-prod-fancy-video img-div-scale" style="height: 400px;">
+            <?php if( !empty($videosec['video_url']) ): ?>
+              <?php if(!empty( $videosec['poster'] )): ?>
+              <div class="gk-prod-fancy-video-inr img-div inline-bg" style="background: url('<?php echo cbv_get_image_src( $videosec['poster'], 'videogrid'); ?>');"></div>
+              <?php endif; ?>
+            <a href="https://youtu.be/9No-FiEInLA" data-fancybox="gallery" class="overlay-link"></a>
+            <i>
+              <svg class="play-icon-svg" width="85" height="85" viewBox="0 0 85 85" fill="#ffffff">
+                <use xlink:href="#play-icon-svg"></use>
+              </svg> 
+            </i>
+            <?php else: ?>
+              <?php if(!empty( $videosec['poster'] )): ?>
+              <div class="gk-prod-fancy-video-inr img-div inline-bg" style="background: url('<?php echo cbv_get_image_src( $videosec['poster'], 'videogrid'); ?>');"></div>
+              <?php endif; ?>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+  </div>
+</section>
+
+
+<section class="gk-referenties-details-sec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="gk-referenties-details-sec-inr">
+          <div class="gkrds-entry-hdr">
+            <h4 class="gkrds-title"><span>Keukens</span>Referenties<i>.</i></h4>
+            <p>Etiam facilisis leo sed blandit tristique. Nam nec ultricies diam, ac dictum elit. Ut venenatis imperdiet dolor, id <br> iaculis magna placerat at. Mauris quis mi augue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="gk-ref-det-ctlr">
+          <div class="reset-list clearfix gkRefGrdSlider">
+            <div class="gk-ref-grd-slide">
+              <div class="gk-ref-det-grd-item">
+                <div class="gk-ref-det-grd-fea-img-ctlr" style="height: 360px;">
+                  <a href="#" class="overlay-link"></a>
+                  <div class="gk-ref-det-grd-fea-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gk-pro-grd-fea-img-1.jpg')"></div>
+                  
+                </div>
+                <div class="gk-ref-det-grd-item-kijker">
+                    <span>referentie in de kijker</span>
+                  </div>
+                <div class="gk-ref-det-grd-des mHc">
+                  <h4 class="gk-ref-det-grd-des-title mHc1"><a href="#">Familie Peeters keuken</a></h4>
+                  <p class="mHc2">Etiam facilisis leo sed blandit tristique. Nam nec ultricies diam, ac dictum elit.</p>
+                  <a href="#">Ontdek</a>
+                </div>
+              </div>
+            </div>
+            <div class="gk-ref-grd-slide">
+              <div class="gk-ref-det-grd-item">
+                <div class="gk-ref-det-grd-fea-img-ctlr" style="height: 360px;">
+                  <a href="#" class="overlay-link"></a>
+                  <div class="gk-ref-det-grd-fea-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gk-pro-grd-fea-img-2.jpg')"></div>
+                </div>
+                <div class="gk-ref-det-grd-des mHc">
+                  <h4 class="gk-ref-det-grd-des-title mHc1"><a href="#">Keukens</a></h4>
+                  <p class="mHc2">Etiam facilisis leo sed blandit tristique. Nam nec ultricies diam, ac dictum elit.</p>
+                  <a href="#">Ontdek</a>
+                </div>
+              </div>
+            </div>
+            <div class="gk-ref-grd-slide">
+              <div class="gk-ref-det-grd-item">
+                <div class="gk-ref-det-grd-fea-img-ctlr" style="height: 360px;">
+                  <a href="#" class="overlay-link"></a>
+                  <div class="gk-ref-det-grd-fea-img inline-bg" style="background: url('<?php echo THEME_URI; ?>/assets/images/gk-pro-grd-fea-img-3.jpg')"></div>
+                </div>
+                <div class="gk-ref-det-grd-des mHc">
+                  <h4 class="gk-ref-det-grd-des-title mHc1"><a href="#">Keukens</a></h4>
+                  <p class="mHc2">Etiam facilisis leo sed blandit tristique. Nam nec ultricies diam, ac dictum elit.</p>
+                  <a href="#">Ontdek</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="mainslider">
+            <span class="gk-ref-det-leftarrow"></span>
+            <span class="gk-ref-det-rightarrow"></span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="footer-top-sec-wrp">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="footer-top-wrp clearfix">
+          <div class="footer-top-lft">
+            <div class="footer-top-dsc">
+              <span>
+                <i>
+                  <svg class="ftr-top-mail-icon-svg" width="74" height="74" viewBox="0 0 74 74" fill="#ffffff">
+                    <use xlink:href="#ftr-top-mail-icon-svg"></use>
+                  </svg> 
+                </i>
+              </span>
+              <h2 class="footer-top-dsc-title">Interesse in <strong>een gesprek met ons?</strong></h2>
+            </div>
+          </div>
+          <div class="footer-top-rgt">
+            <a href="#">Contacteer ons</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php get_footer(); ?>
