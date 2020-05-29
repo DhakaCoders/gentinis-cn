@@ -206,7 +206,8 @@
 	font-weight: 500;
 	margin-bottom: 20px;
 }
-.gk-prod-des-rgtsiderbar span{
+.gk-prod-des-rgtsiderbar span,
+.gk-prod-des-rgtsiderbar a{
 	display: block;
 	padding-left: 40px;
 	padding-bottom: 30px;
@@ -214,7 +215,8 @@
 	font-weight: 500;
 	position: relative;
 }
-.gk-prod-des-rgtsiderbar span i{
+.gk-prod-des-rgtsiderbar span i,
+.gk-prod-des-rgtsiderbar a i{
 	position: absolute;
 	top: 0;
 	left: 0;

@@ -5,6 +5,7 @@
 
   $address = $contact['address'];
   $emailadres = $contact['emailaddress'];
+  $btw = $contact['btw'];
   $show_telefoon_1 = $contact['telephone_1'];
   $telefoon_1 = trim(str_replace($spacialArry, $replaceArray, $show_telefoon_1));
 
@@ -19,6 +20,7 @@
   }else{
     $logo_tag = '';
   }
+  $schedules = get_field('schedule', 'options');
   $copyright_text = get_field('copyright_text', 'options');
 ?>
 <footer class="footer-wrp">
@@ -48,27 +50,33 @@
               ?>
             </div>
             <div class="ftr-col ftr-col-3">
-              <h6><span>OPENINGSUREN<b>.</b></span></h6>
+              <h6><span><?php _e( 'OPENINGSUREN', THEME_NAME );?><b>.</b></span></h6>
+              <?php 
+              if( $schedules ): 
+                $sfooter = $schedules['footer'];
+                if( $sfooter ):
+                  $fschedules = $sfooter['footerschedule'];
+              ?>
               <ul class="ulc">
+                <?php foreach( $fschedules as $fschedule ): ?>
                 <li>
-                  <a>Dinsdag -> vrijdag:</a>
-                  <strong>10:00 - 12:00</strong>
-                  <strong>14:00 - 18:00</strong>
+                <?php 
+                  if( !empty($fschedule['titel']) ) printf( '<a>%s:</a>',  $fschedule['titel']); 
+                  if( !empty($fschedule['time_range']) ) printf( '%s',  $fschedule['time_range']); 
+                ?>
                 </li>
-                <li>
-                  <a>Zaterdag :</a>
-                  <strong>10:00 - 12:00</strong>
-                  <strong>14:00 - 17:00</strong>
-                </li>
-                <li><a>Zondag en maandag gesloten </a></li>
-              </ul>              
+                <?php endforeach; ?>
+                <?php if( !empty($sfooter['bottom_text']) ) printf('<li><a>%s </a></li>', $sfooter['bottom_text']); ?>
+              </ul>
+              <?php endif; ?> 
+              <?php endif; ?>              
             </div>
             <div class="ftr-col ftr-col-4">
-              <h6><span>Contact<b>.</b></span></h6>
+              <h6><span><?php _e( 'Contact', THEME_NAME );?><b>.</b></span></h6>
               <ul class="ulc">
                 <?php if( !empty($emailadres) ) printf('<li><a href="mailto:%s">%s</a></li>', $emailadres, $emailadres); ?>
                 <?php if( !empty($address) ) printf('<li><a href="%s">%s</a></li>', $gmaplink, $address); ?>
-                <li><span>BE0478242464</span></li>
+                <?php if( !empty($btw) ) printf('<li><span>%s</span></li>', $btw); ?>
               </ul>               
             </div>
             <div class="ftr-col ftr-col-5">

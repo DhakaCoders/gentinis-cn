@@ -106,11 +106,24 @@ if( $galleries ):
           endif;
           ?>
           </div>
+          
           <div class="gk-prod-des-rgtsiderbar">
             <h4 class="gk-prod-rgtsidebar-title">Catalogus<i>.</i></h4>
-            <p>Donec faucibus libero eu dictum facilisis.</p>
-            <span>Modern Strak 2019<i><img src="<?php echo THEME_URI; ?>/assets/images/gk-prod-category.svg"></i></span>
-            <span>Modern Strak 2020<i><img src="<?php echo THEME_URI; ?>/assets/images/gk-prod-category.svg"></i></span>
+            <?php 
+              $sidebar = get_field('psidebarsec', $thisID); 
+              if( $sidebar ):
+            ?>
+            <?php 
+              if( !empty($sidebar['titel']) ) printf('<p></p>', $sidebar['titel']);
+              $downloads = $sidebar['downloads']; 
+              if( $downloads ):
+              foreach( $downloads as $download  ):
+                if( !empty($download['file']) ): 
+            ?>
+            <a href="<?php echo $download['file']; ?>" download><?php if( !empty($download['titel']) ) printf( '%s', $download['titel'] ); ?><i><img src="<?php echo THEME_URI; ?>/assets/images/gk-prod-category.svg"></i></a>
+            <?php endif; endforeach; ?>
+            <?php endif; ?>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -148,25 +161,51 @@ if( $galleries ):
 
 
 <?php 
-$query = new WP_Query(array( 
-    'post_type'=> 'referentie',
-    'post_status' => 'publish',
-    'posts_per_page' => 6,
-    'orderby' => 'date',
-    'order'=> 'ASC'
+$showhide_prefer = get_field( 'showhide_preferenties', $thisID );
+$prefer = get_field( 'preferentiessec', $thisID );
+$referIDs = $prefer['selecteer_referentie'];
+if($referIDs){
+  $query = new WP_Query(array( 
+      'post_type'=> 'referentie',
+      'post_status' => 'publish',
+      'posts_per_page' => 3,
+      'orderby' => 'date',
+      'order'=> 'ASC',
+      'post__in' => $referIDs
 
-  ) 
-);
-if($query->have_posts()):
+    ) 
+  );
+}else{
+  $query = new WP_Query(array( 
+      'post_type'=> 'referentie',
+      'post_status' => 'publish',
+      'posts_per_page' => 3,
+      'orderby' => 'date',
+      'order'=> 'ASC'
+
+    ) 
+  );
+}
+
+if($query->have_posts() && $showhide_prefer):
 ?>
 <section class="gk-referenties-details-sec">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="gk-referenties-details-sec-inr">
-          <div class="gkrds-entry-hdr">
-            <h4 class="gkrds-title"><span>Keukens</span>Referenties<i>.</i></h4>
-            <p>Etiam facilisis leo sed blandit tristique. Nam nec ultricies diam, ac dictum elit. Ut venenatis imperdiet dolor, id <br> iaculis magna placerat at. Mauris quis mi augue.</p>
+          <div class="gkrds-entry-hdr"> 
+            <h4 class="gkrds-title">
+            <?php 
+              if( !empty($prefer['titel']) OR $prefer['subtitel']): ?>
+                <?php printf('<span>%s</span>', $prefer['titel']); ?>
+                <?php printf('%s', $prefer['subtitel']); ?><i>.</i>
+              <?php 
+              else: ?>
+              <span>Keukens</span>Referenties<i>.</i>
+            <?php endif; ?>
+            </h4>
+            <?php if(!empty($prefer['beschrijving'])) echo wpautop( $prefer['beschrijving'] ); ?>
           </div>
         </div>
       </div>

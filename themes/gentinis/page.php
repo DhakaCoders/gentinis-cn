@@ -228,6 +228,49 @@ while ( have_posts() ) :
                 }
               }
             echo '</div></div><hr>';
+            }elseif( get_row_layout() == 'buttons' ){
+              $fc_buttons = get_sub_field('fc_buttons');
+              if( !empty( $fc_buttons ) ){
+              echo '<div class="dft-btns"><div class="row"><div class="col-xs-12">';
+                foreach( $fc_buttons as $fcbutton ){
+                  $type = $fcbutton['type'];
+                  $knop = $fcbutton['knop'];
+                  $kleur = $fcbutton['kleur'];
+                  if( $kleur == 'transparent' ) {
+                    $svgkleur = 'black';
+                    $fill = '#191A1E';
+                  } elseif( $kleur == 'red' ) {
+                    $svgkleur = 'white';
+                    $fill = '#ffffff';
+                  }else{
+                    $svgkleur = 'white';
+                    $fill = '#fffff';
+                  }
+                  if( $type == 1 ){
+                    if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                      printf('<div class="gk-btn gk-btn-'.$kleur.'"><a href="%s" target="%s">%s</a></div>', $knop['url'], $knop['target'], $knop['title']);
+                    }
+                  } elseif( $type == 2 ){
+                    if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                      echo '<div class="gk-btn gk-btn-'.$kleur.'">';
+                        printf('<a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-'.$svgkleur.'-svg" width="14" height="14" viewBox="0 0 14 14" fill="#ffffff">
+                                <use xlink:href="#btn-angle-icon-'.$svgkleur.'-svg"></use>
+                              </svg></i></span></a>', $knop['url'], $knop['target'], $knop['title']);
+                      echo '</div>';
+                    }
+                  } else{
+                    if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
+                      echo '<div class="gk-btn gk-btn-'.$kleur.'">';
+                        printf('<a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-'.$svgkleur.'-svg" width="14" height="14" viewBox="0 0 14 14" fill="#ffffff">
+                                <use xlink:href="#btn-angle-icon-'.$svgkleur.'-svg"></use>
+                              </svg></i></span></a>', $knop['url'], $knop['target'], $knop['title']);
+                       if( !empty($fcbutton['bottom_text']) ) printf('<p>%s</p>', $fcbutton['bottom_text']);
+                      echo '</div>';
+                    }
+                  }
+                }
+              echo '</div></div></div>';
+              }
             }elseif( get_row_layout() == 'afbeelding' ){
               $fc_afbeelding = get_sub_field('fc_afbeelding');
               if( !empty( $fc_afbeelding ) ){

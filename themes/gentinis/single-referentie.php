@@ -1,6 +1,11 @@
 <?php 
 get_header();
-$thisID = get_the_ID(); 
+$thisID = get_the_ID();
+$referID = 79;
+$pageTitle = get_the_title($referID);
+$standaardbanner = get_field('pagebanner', $referID);
+if( empty($standaardbanner) ) $standaardbanner = THEME_URI.'/assets/images/page-bnr.jpg';
+
 ?>
 <section class="page-banner">
   <div class="page-bnr-black-bg">
@@ -8,13 +13,13 @@ $thisID = get_the_ID();
       <div class="page-banner-img-cntlr">
         <div class="page-back-btn-cntlr">
           <div>
-            <a href="#"><i><img src="<?php echo THEME_URI; ?>/assets/images/back-btn-arrow.png"></i> Terug</a>
+            <a href="javascript:history.go(-1)"><i><img src="<?php echo THEME_URI; ?>/assets/images/back-btn-arrow.png"></i> Terug</a>
           </div>
         </div>
         <div class="page-banner-img-cntlr-inr">
           <span class="page-banner-overlay-bg"></span>
           <div class="page-banner-bg-cntlr">
-            <div class="page-banner-bg inline-bg" style="background-image:url(<?php echo THEME_URI; ?>/assets/images/page-bnr.jpg);">
+            <div class="page-banner-bg inline-bg" style="background-image:url(<?php echo $standaardbanner; ?>);">
             </div>
           </div>
           <span class="page-bnr-angle"><img src="<?php echo THEME_URI; ?>/assets/images/page-bnr-angle.png"></span>
@@ -23,13 +28,9 @@ $thisID = get_the_ID();
       <div class="page-banner-des">
         <div class="page-banner-des-inr">
           <div>
-            <h1 class="page-banner-title"><span>Referenties<i>.</i></span></h1>
+            <h1 class="page-banner-title"><span><?php echo $pageTitle; ?><i>.</i></span></h1>
             <div class="page-breadcrumbs">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Binnenpagina</a></li>
-                <li><a href="#">Binnenpagina</a></li>
-              </ul>
+              <?php cbv_breadcrumbs(); ?>
             </div>
           </div>
         </div>
@@ -102,14 +103,17 @@ if( $galleries ):
               ?>
             </div>
             <div class="gk-prod-des-rgtsiderbar">
-              <h5 class="gk-ref-det-rgtsidebar-title">Specificaties<i>.</i></h5>
-              <p>Donec faucibus libero eu dictum facilisis.</p>
-              <h5 class="gk-ref-det-rgtsidebar-title">Materialen<i>.</i></h5>
-              <p>Donec faucibus libero eu dictum facilisis.</p>
-              <h5 class="gk-ref-det-rgtsidebar-title">Concept<i>.</i></h5>
-              <p>Donec faucibus libero eu dictum facilisis.</p>
-              <h5 class="gk-ref-det-rgtsidebar-title">Lorem ipsum<i>.</i></h5>
-              <p>Donec faucibus libero eu dictum facilisis.</p>
+              <?php 
+                $sidebar = get_field('sidebarsec', $thisID); 
+                if( $sidebar ):
+              ?>
+              <?php 
+                foreach( $sidebar as $siderow  ): 
+                  if( !empty($siderow['titel']) ) printf('<h5 class="gk-ref-det-rgtsidebar-title">%s<i>.</i></h5>', $siderow['titel'] );
+                  if(!empty($siderow['beschrijving'])) echo wpautop( $siderow['beschrijving'] ); 
+                endforeach; 
+              ?>
+              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -148,33 +152,34 @@ if( $galleries ):
 
 
 <?php 
-$categories = get_the_terms( $thisID, 'referenties_cat' );
-$term_id = $term_name = $term_desc = '';
-if ( ! empty( $categories ) ) {
-    foreach( $categories as $category ) {
-       $term_id = $category->term_id;
-       $term_name = $category->name;
-       $term_desc = $category->description;
-    }
+
+$showhide_referenties = get_field( 'showhide_referenties', $thisID );
+$prefer = get_field( 'referentiessec', $thisID );
+$referIDs = $prefer['selecteer_referentie'];
+if($referIDs){
+  $query = new WP_Query(array( 
+      'post_type'=> 'referentie',
+      'post_status' => 'publish',
+      'posts_per_page' => 3,
+      'orderby' => 'date',
+      'order'=> 'ASC',
+      'post__in' => $referIDs
+
+    ) 
+  );
+}else{
+  $query = new WP_Query(array( 
+      'post_type'=> 'referentie',
+      'post_status' => 'publish',
+      'posts_per_page' => 3,
+      'orderby' => 'date',
+      'order'=> 'ASC'
+
+    ) 
+  );
 }
 
-$query = new WP_Query(array( 
-    'post_type'=> 'referentie',
-    'post_status' => 'publish',
-    'posts_per_page' => -1,
-    'orderby' => 'date',
-    'order'=> 'ASC',
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'referenties_cat',
-        'field' => 'term_id',
-        'terms' => $term_id
-      )
-    )
-
-  ) 
-);
-if($query->have_posts()):
+if($query->have_posts() && $showhide_referenties):
 ?>
 <section class="gk-referenties-details-sec">
   <div class="container">
@@ -182,8 +187,17 @@ if($query->have_posts()):
       <div class="col-md-12">
         <div class="gk-referenties-details-sec-inr">
           <div class="gkrds-entry-hdr">
-            <h4 class="gkrds-title"><?php if( !empty($term_name) ) printf('<span>%s</span>', $term_name); ?>Referenties<i>.</i></h4>
-            <?php if( !empty($term_desc) ) echo wpautop( $term_desc ); ?>
+            <h4 class="gkrds-title">
+            <?php 
+              if( !empty($prefer['titel']) OR $prefer['subtitel']): ?>
+                <?php printf('<span>%s</span>', $prefer['titel']); ?>
+                <?php printf('%s', $prefer['subtitel']); ?><i>.</i>
+              <?php 
+              else: ?>
+              <span>Keukens</span>Referenties<i>.</i>
+            <?php endif; ?>
+            </h4>
+            <?php if(!empty($prefer['beschrijving'])) echo wpautop( $prefer['beschrijving'] ); ?>
           </div>
         </div>
       </div>

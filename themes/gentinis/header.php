@@ -191,17 +191,25 @@ $cterm = get_queried_object();
                       </div>
                     </li>
                     <?php endif; ?>
+
+                    <?php  
+                      $schedules = get_field('schedule', 'options');
+                      if( $schedules ): 
+                      $sheader = $schedules['header'];
+                      if( $sheader ):
+                    ?>
                     <li>
                       <div class="hdr-time">
                         <div>
-                          <label>Di - Za:</label>
-                          <div>
-                            <span>10:00 - 12:00   /   14:00 - 18:00</span>
-                          </div>
+                        <?php 
+                          if( !empty($sheader['titel']) ) printf( '<label>%s:</label>',  $sheader['titel']); 
+                          if( !empty($sheader['time_range']) ) printf( '<div><span>%s</span></div>',  $sheader['time_range']); 
+                        ?>
                         </div>
-                        <p>Ook mogelijk op afspraak </p>
+                        <?php if( !empty($sheader['bottom_text']) ) printf('<p>%s</p>', $sheader['bottom_text']); ?>
                       </div>
                     </li>
+                    <?php endif; endif; ?>
                     <li>
                       <div class="hdr-social">
                       <?php if(!empty($smedias)):  ?>
@@ -269,17 +277,23 @@ $cterm = get_queried_object();
                               </div>
                             </li>
                             <?php endif; ?>
+                            <?php  
+                              if( $schedules ): 
+                              $sheader = $schedules['header'];
+                              if( $sheader ):
+                            ?>
                             <li>
                               <div class="hdr-time">
                                 <div>
-                                  <label>Di - Za:</label>
-                                  <div>
-                                    <span>10:00 - 12:00   /   14:00 - 18:00</span>
-                                  </div>
+                                <?php 
+                                  if( !empty($sheader['titel']) ) printf( '<label>%s:</label>',  $sheader['titel']); 
+                                  if( !empty($sheader['time_range']) ) printf( '<div><span>%s</span></div>',  $sheader['time_range']); 
+                                ?>
                                 </div>
-                                <p>Ook mogelijk op afspraak </p>
+                                <?php if( !empty($sheader['bottom_text']) ) printf('<p>%s</p>', $sheader['bottom_text']); ?>
                               </div>
                             </li>
+                            <?php endif; endif; ?>
                             <li>
                               <div class="hdr-social">
                                 <?php if(!empty($smedias)):  ?>

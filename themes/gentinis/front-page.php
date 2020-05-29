@@ -55,25 +55,20 @@
                     if( !empty($hslide['beschrijving']) ) echo wpautop( $hslide['beschrijving'] );
                     ?>
                     <div class="main-slide-btns">
-                      <div class="msbtn-1 gk-btn gk-btn-red">
-                        <a href="#">
-                          <span>Meer ervaring
-                            <i>
-                              <svg class="btn-angle-icon-white-svg" width="14" height="14" viewBox="0 0 14 14" fill="#ffffff">
-                                <use xlink:href="#btn-angle-icon-white-svg"></use>
-                              </svg> 
-                            </i>
-                          </span>
-                        </a>
-                      </div>
-                <?php 
-                  $knop2 = $hslide['knop_2'];
-                  if( is_array( $knop2 ) &&  !empty( $knop2['url'] ) ){
-                      printf('<div class="msbtn-2 gk-btn gk-btn-transparent bdr-white"><a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-white-svg" width="14" height="14" viewBox="0 0 14 14" fill="#fff">
-                                <use xlink:href="#btn-angle-icon-white-svg"></use>
-                              </svg></i></span></a></div>', $knop2['url'], $knop2['target'], $knop2['title']); 
-                  } 
-                ?>
+                    <?php 
+                      $knop1 = $hslide['knop_1'];
+                      if( is_array( $knop1 ) &&  !empty( $knop1['url'] ) ){
+                          printf('<div class="msbtn-1 gk-btn gk-btn-red"><a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-white-svg" width="14" height="14" viewBox="0 0 14 14" fill="#ffffff">
+                                    <use xlink:href="#btn-angle-icon-white-svg"></use>
+                                  </svg></i></span></a></div>', $knop1['url'], $knop1['target'], $knop1['title']); 
+                      } 
+                      $knop2 = $hslide['knop_2'];
+                      if( is_array( $knop2 ) &&  !empty( $knop2['url'] ) ){
+                          printf('<div class="msbtn-2 gk-btn gk-btn-transparent bdr-white"><a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-white-svg" width="14" height="14" viewBox="0 0 14 14" fill="#fff">
+                                    <use xlink:href="#btn-angle-icon-white-svg"></use>
+                                  </svg></i></span></a></div>', $knop2['url'], $knop2['target'], $knop2['title']); 
+                      } 
+                    ?>
                     </div>
                   </div>
                 </div>
@@ -235,10 +230,10 @@
             <div class="hmasd-btn">
               <?php 
                 if( is_array( $link_8 ) &&  !empty( $link_8['url'] ) ){
-                  printf('<a href="%s" target="%s"><span class="xlg-txt">%s</span></a>', $link_8['url'], $link_8['target'], $link_8['title']); 
+                  printf('<a class="hide-sm" href="%s" target="%s"><span>%s</span></a>', $link_8['url'], $link_8['target'], $link_8['title']); 
                 }
                 if( is_array( $link_9 ) &&  !empty( $link_9['url'] ) ){
-                  printf('<a href="%s" target="%s"><span class="xs-txt">%s</span></a>', $link_9['url'], $link_9['target'], $link_9['title']); 
+                  printf('<a class="show-sm" href="%s" target="%s"><span>%s</span></a>', $link_9['url'], $link_9['target'], $link_9['title']); 
                 }
               ?>
             </div>
