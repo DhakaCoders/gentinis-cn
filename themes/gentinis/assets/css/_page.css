@@ -161,7 +161,9 @@
 .sitemap ul li a:focus{
 	text-decoration: underline;
 }
-
+.page-404.text-center {
+    padding: 120px 0;
+}
 @media(max-width: 1499px){
 	
 }
