@@ -119,9 +119,14 @@
 	display: inline-block;
 	vertical-align: baseline;
 	margin-right: 18px;
+	color: #9A9A9A;
+	font-size: 20px;
+	transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
 }
-.hdr-social a:hover svg{
-	fill: #FF2021!important;
+.hdr-social a:hover{
+	color: #FF2021!important;
 }
 .hdr-social a:last-child{
 	margin-right: 0;
