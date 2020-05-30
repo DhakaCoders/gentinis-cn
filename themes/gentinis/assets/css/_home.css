@@ -477,6 +477,7 @@
 }
 .msbtn-1{
 	margin-right: 14px;
+	max-width: 220px!important;
 }
 .msbtn-1 a:hover{
 	border-color: #fff!important;
