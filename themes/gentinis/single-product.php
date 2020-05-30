@@ -2,8 +2,7 @@
 get_header();
 $thisID = get_the_ID();
 
-$shopID = 10;
-$standaardbanner = get_field('pagebanner', $shopID);
+$standaardbanner = get_field('pagebanner', $thisID);
 if( empty($standaardbanner) ) $standaardbanner = THEME_URI.'/assets/images/page-bnr.jpg';
 
 $categories = get_the_terms( $thisID, 'product_cat' );

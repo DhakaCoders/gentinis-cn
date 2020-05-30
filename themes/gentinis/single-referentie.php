@@ -2,8 +2,8 @@
 get_header();
 $thisID = get_the_ID();
 $referID = 79;
-$pageTitle = get_the_title($referID);
-$standaardbanner = get_field('pagebanner', $referID);
+$pageTitle = get_the_title($thisID);
+$standaardbanner = get_field('pagebanner', $thisID);
 if( empty($standaardbanner) ) $standaardbanner = THEME_URI.'/assets/images/page-bnr.jpg';
 
 ?>

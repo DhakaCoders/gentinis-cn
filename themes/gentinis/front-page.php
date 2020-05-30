@@ -187,14 +187,14 @@
   <div class="about-sec-img-con">
     <div class="about-sec-img-con-inr">
       <?php if(!empty($introsec2['afbeelding'])): ?>
-      <div class="about-sec-fea-img inline-bg" style="background: url(<?php echo cbv_get_image_src($introsec2['afbeelding'], 'overons1'); ?>);"></div>
+      <div class="about-sec-fea-img inline-bg" style="background: url(<?php echo cbv_get_image_src($introsec2['afbeelding'], 'hintrogrid'); ?>);"></div>
       <?php endif; ?>
 
       <div class="about-sec-vdo-img-cntlr">
         <div class="about-sec-vdo-img-cntlr-inr img-div-scale">
           <?php if(!empty($introsec2['video_url'])): ?>
             <?php if(!empty($introsec2['poster'])): ?>
-            <div class="about-sec-vdo-img img-div inline-bg" style="background-image: url(<?php echo cbv_get_image_src($introsec2['poster'], 'overons1'); ?>);"></div>
+            <div class="about-sec-vdo-img img-div inline-bg" style="background-image: url(<?php echo cbv_get_image_src($introsec2['poster'], 'hposter'); ?>);"></div>
             <?php endif; ?>
           <a href="<?php echo $introsec2['video_url']; ?>" data-fancybox="gallery" class="overlay-link"></a>
           <i>
@@ -204,7 +204,7 @@
           </i>
           <?php else: ?>
             <?php if(!empty($introsec2['poster'])): ?>
-            <div class="about-sec-vdo-img img-div inline-bg" style="background-image: url(<?php echo cbv_get_image_src($introsec2['poster'], 'overons1'); ?>);"></div>
+            <div class="about-sec-vdo-img img-div inline-bg" style="background-image: url(<?php echo cbv_get_image_src($introsec2['poster'], 'hposter'); ?>);"></div>
             <?php endif; ?>
           <?php endif; ?>
         </div>
@@ -290,7 +290,7 @@
                 $catimg_src = '';
                 foreach ( $terms as $term ) { 
                 $img_id = get_field('image', $term, false); 
-                if( !empty($img_id) ) $catimg_src = cbv_get_image_src( $img_id );
+                if( !empty($img_id) ) $catimg_src = cbv_get_image_src( $img_id, 'hcatgrid' );
               ?>
               <li>
                 <div class="hm-ser-cat-grd-item inline-bg" style="background: url(<?php echo $catimg_src; ?>);">

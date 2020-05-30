@@ -24,7 +24,10 @@ if( !function_exists('cbv_theme_setup') ){
 		}
         add_image_size( 'bloggrid', 400, 280, true );
         add_image_size( 'contgrid', 596, 510, true );
-        add_image_size( 'hmslide', 1584, 634, true );
+        add_image_size( 'hintrogrid', 616, 660, true );
+        add_image_size( 'hcatgrid', 274, 420, true );
+        add_image_size( 'hposter', 540, 370, true );
+        add_image_size( 'hmslide', 1680, 866, true );
         add_image_size( 'productgrid', 374, 360, true );
         add_image_size( 'gallerygird', 688, 544, true );
         add_image_size( 'videogrid', 996, 400, true );
