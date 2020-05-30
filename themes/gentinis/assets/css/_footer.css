@@ -166,6 +166,9 @@
   color: #191A1E;
   font-weight: 400;
 }
+.ftr-btm-col-1 span p{
+  line-height: 1;
+}
 .ftr-btm-col-2 ul li{
   padding: 0;
   padding-left: 14px;
@@ -511,6 +514,9 @@
   }
   .ftr-col.ftr-col-3{
     padding-top: 40px!important;
+  }
+  .ftr-btm-col-3 a{
+    color: #9A9A9A;
   }
 }
 

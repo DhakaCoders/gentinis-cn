@@ -350,7 +350,7 @@ if( $('.hmTestiSLider').length ){
       dots: false,
       infinite: false,
       autoplay: true,
-      autoplaySpeed: 4000,
+      autoplaySpeed: 3000,
       speed: 300,
       slidesToShow: 1,
       slidesToScroll: 1,
