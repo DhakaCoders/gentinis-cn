@@ -154,7 +154,6 @@
                   <div class="dft-responsibility-grd-item-inr mHc">
                     <?php if( !empty($husp['icon']) ):  ?>
                     <div class="dftrgi-icon mHc1">
-                      <img src="<?php echo THEME_URI; ?>/assets/images/makes-us-different-icon-01.svg">
                       <img src="<?php echo $husp['icon']; ?>" alt="<?php echo cbv_get_image_alt($husp['icon'] ); ?>">
                     </div>
                   <?php endif; ?>
@@ -353,7 +352,7 @@
 <section class="hm-testi-section inline-bg" style="background: url(<?php echo $quote_src; ?>);">
   <?php if( !empty($quote['afbeelding']) ){ ?>
   <div class="xs-hm-testi-sec-fea-img">
-    <?php cbv_get_image_tag( $quote['afbeelding'] ); ?>
+    <?php echo cbv_get_image_tag( $quote['afbeelding'] ); ?>
   </div>
   <?php } ?>
   <?php 
