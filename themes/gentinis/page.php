@@ -244,7 +244,7 @@ while ( have_posts() ) :
                     $fill = '#ffffff';
                   }else{
                     $svgkleur = 'white';
-                    $fill = '#fffff';
+                    $fill = '#ffffff';
                   }
                   if( $type == 1 ){
                     if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
@@ -253,7 +253,7 @@ while ( have_posts() ) :
                   } elseif( $type == 2 ){
                     if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
                       echo '<div class="gk-btn gk-btn-'.$kleur.'">';
-                        printf('<a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-'.$svgkleur.'-svg" width="14" height="14" viewBox="0 0 14 14" fill="#ffffff">
+                        printf('<a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-'.$svgkleur.'-svg" width="14" height="14" viewBox="0 0 14 14" fill="'.$fill.'">
                                 <use xlink:href="#btn-angle-icon-'.$svgkleur.'-svg"></use>
                               </svg></i></span></a>', $knop['url'], $knop['target'], $knop['title']);
                       echo '</div>';
@@ -261,7 +261,7 @@ while ( have_posts() ) :
                   } else{
                     if( is_array( $knop ) &&  !empty( $knop['url'] ) ){
                       echo '<div class="gk-btn gk-btn-'.$kleur.'">';
-                        printf('<a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-'.$svgkleur.'-svg" width="14" height="14" viewBox="0 0 14 14" fill="#ffffff">
+                        printf('<a href="%s" target="%s"><span>%s<i><svg class="btn-angle-icon-'.$svgkleur.'-svg" width="14" height="14" viewBox="0 0 14 14" fill="'.$fill.'">
                                 <use xlink:href="#btn-angle-icon-'.$svgkleur.'-svg"></use>
                               </svg></i></span></a>', $knop['url'], $knop['target'], $knop['title']);
                        if( !empty($fcbutton['bottom_text']) ) printf('<p>%s</p>', $fcbutton['bottom_text']);
